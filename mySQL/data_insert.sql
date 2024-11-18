@@ -1,4 +1,4 @@
-INSERT INTO `VENUE` (`id`, `name`, `city_id`) 
+INSERT INTO `VENUE`
 VALUES 
 (1, 'El Baladero', 1),
 (2, 'Grancaventura', 2),
@@ -8,17 +8,17 @@ VALUES
 (7, 'Secret Location', 1);
 
 
-INSERT INTO `EVENT` (`id`, `name`, `date_time`, `venue_id`) 
+INSERT INTO `EVENT` (`id`, `name`, `date_time`) 
 VALUES 
-(1, 'Cenizas', '2024-12-12 22:00:00', 1),
-(2, 'Blasfemia', '2025-02-16 23:00:00', 1),
-(3, 'Sinapsis', '2024-10-24 23:00:00', 2),
-(4, 'RAVEOUT', '2024-10-24 23:30:00', 4),
-(5, 'Free2Feel', '2024-12-06 23:00:00', 4),
-(6, 'HardWired', '2025-03-01 22:00:00', 1),
-(7, 'VERTIGO', '2025-02-14 22:30:00', 7),
-(8, 'Discontrol', '2024-11-01 22:00:00', 5),
-(9, 'Asymetric', '2024-11-29 22:00:00', 2);
+(1, 'Cenizas', '2024-12-12 22:00:00'),
+(2, 'Blasfemia', '2025-02-16 23:00:00'),
+(3, 'Sinapsis', '2024-10-24 23:00:00'),
+(4, 'RAVEOUT', '2024-10-24 23:30:00'),
+(5, 'Free2Feel', '2024-12-06 23:00:00'),
+(6, 'HardWired', '2025-03-01 22:00:00'),
+(7, 'VERTIGO', '2025-02-14 22:30:00'),
+(8, 'Discontrol', '2024-11-01 22:00:00'),
+(9, 'Asymetric', '2024-11-29 22:00:00');
 
 INSERT INTO `CITY` (`id`, `name`) 
 VALUES 

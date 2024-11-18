@@ -25,7 +25,6 @@ async function getAllCities(req, res) {
   }
 }
 
-//getAllCities();
 
 async function getOneCity(req, res) {
   try {
@@ -40,7 +39,7 @@ async function getOneCity(req, res) {
   }
 }
 
-//getOneCity();
+
 
 async function updateCity(req, res) {
   try {
@@ -60,7 +59,7 @@ async function updateCity(req, res) {
   }
 }
 
-//updateCity();
+
 
 async function deleteCity(req, res) {
   try {
@@ -79,11 +78,12 @@ async function deleteCity(req, res) {
   }
 }
 
-//deleteArtist();
+
 
 module.exports = {
   getAllCities,
   getOneCity,
   updateCity,
   deleteCity,
+  addCity
 };

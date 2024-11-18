@@ -77,10 +77,7 @@ async function deleteStyle(req, res) {
 module.exports = {
   getAllStyles,
   getOneStyle,
-  createStyle,
+  addStyle,
   updateStyle,
   deleteStyle,
-  eagerStyleSearch,
-  lazyStyleSearch,
-  addStyle,
 };

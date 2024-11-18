@@ -45,6 +45,7 @@ async function getOneArtist(req, res) {
   }
 }
 
+
 async function updateArtist(req, res) {
   try {
     const [artistExist, artist] = await Artist.update(req.body, {
@@ -80,68 +81,11 @@ async function deleteArtist(req, res) {
   }
 }
 
-// async function eagerArtistSearch(req, res) {
-//   try {
-//     console.log("Fetching artist with ID:", req.params.id);
-//     if (!req.params.id) {
-//       return res.status(400).json({ message: "Artist ID is required" });
-//     }
-//     const artist = await Artist.findOne({
-//       where: {
-//         id: req.params.id,
-//       },
-//       include: [
-//         { model: Movie, attributes: ["title"], through: { attributes: [] } },
-//       ],
-//     });
-//     if (!artist) {
-//       return res.status(404).json({ message: "Artist not found" });
-//     }
-
-//     return res.status(200).json({ message: "Artist found", artist: artist });
-//   } catch (error) {
-//     console.error("Error fetching artist:", error);
-//     return res.status(500).send(error.message);
-//   }
-// }
-
-
-// async function lazyArtistSearch(req, res) {
-//   try {
-//     const artist = await artist.findOne({
-//       where: {
-//         id: req.params.id,
-//       },
-//       include: {
-//         model: Movie,
-//         attributes: ["title"],
-//         through: { attributes: [] },
-//       },
-//     });
-
-//     if (!artist) {
-//       return res.status(404).json({ message: "Artis not found" });
-//     }
-
-//     const movies = await artist.getMovies({});
-//     return res.status(200).json({
-//       message: "Artist found",
-//       artist: artist,
-//       movies: movies,
-//     });
-//   } catch (error) {
-//     console.error("Error fetching artist:", error);
-//     return res.status(500).send(error.message);
-//   }
-// }
-
 module.exports = {
   getAllArtists,
   getOneArtist,
-  createArtist,
   updateArtist,
   deleteArtist,
-  eagerArtistSearch,
-  lazyArtistSearch,
-  addArtist
+  addArtist,
+  
 };

@@ -1,5 +1,5 @@
 const Event = require("../models/event");
-
+const Artist = require("../models/artist");
 async function addEvent(req, res) {
   try {
     const event = await Event.create({
@@ -78,13 +78,36 @@ async function deleteEvent(req, res) {
   }
 }
 
+async function eagerArtistSearch(req, res) {
+  try {
+    console.log("Fetching artist with ID:", req.params.id);
+    if (!req.params.id) {
+      return res.status(400).json({ message: "Artist ID is required" });
+    }
+    const artist = await Artist.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        { model: Event, attributes: ["name"], through: { attributes: [] } },
+      ],
+    });
+    if (!artist) {
+      return res.status(404).json({ message: "Artist not found" });
+    }
+
+    return res.status(200).json({ message: "Artist found", artist: artist });
+  } catch (error) {
+    console.error("Error fetching artist:", error);
+    return res.status(500).send(error.message);
+  }
+}
+
 module.exports = {
   getAllEvents,
   getOneEvent,
-  createEvent,
   updateEvent,
   deleteEvent,
-  eagerEventSearch,
-  lazyEventSearch,
   addEvent,
+  eagerArtistSearch,
 };

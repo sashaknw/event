@@ -2,6 +2,7 @@
 require("dotenv").config();
 const { checkConnection, syncModels } = require("./database/index");
 const addRelationsToModels = require("./database/models");
+const User = require("./api/models/user");
 
 const express = require("express");
 const cors = require("cors");
@@ -18,8 +19,7 @@ function initializeAndListenWithExpress() {
     .use(cors())
     .use(morgan("dev"))
     .use(express.json())
-    .use("/api", require("./api/routes"))
-
+    .use("/api", require("./api/router"))
     .listen(3000, () => {
       console.log(`> Listening on port: ${3000}`);
     });
