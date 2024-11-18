@@ -1,4 +1,4 @@
-//copiado del LAB sequelize-relationship
+
 require("dotenv").config();
 const { checkConnection, syncModels } = require("./database/index");
 const addRelationsToModels = require("./database/models");

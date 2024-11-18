@@ -1,4 +1,4 @@
-INSERT INTO `VENUE`
+INSERT INTO `Venues`
 VALUES 
 (1, 'El Baladero', 1),
 (2, 'Grancaventura', 2),
@@ -8,7 +8,7 @@ VALUES
 (7, 'Secret Location', 1);
 
 
-INSERT INTO `EVENT` (`id`, `name`, `date_time`) 
+INSERT INTO `Events` (`id`, `name`, `date_time`) 
 VALUES 
 (1, 'Cenizas', '2024-12-12 22:00:00'),
 (2, 'Blasfemia', '2025-02-16 23:00:00'),
@@ -20,14 +20,14 @@ VALUES
 (8, 'Discontrol', '2024-11-01 22:00:00'),
 (9, 'Asymetric', '2024-11-29 22:00:00');
 
-INSERT INTO `CITY` (`id`, `name`) 
+INSERT INTO `Cities` (`id`, `name`) 
 VALUES 
 (1, 'Las Palmas de Gran Canaria'),
 (2, 'Arucas'),
 (3, 'Telde'),
 (4, 'Maspalomas');
 
-INSERT INTO `ARTIST` (`id`, `name`, `description`) 
+INSERT INTO `Artists` (`id`, `name`, `description`) 
 VALUES 
 (1, 'Tanasoul', 'DJ y productor basado en Las Palmas de Gran Canaria. Fundador del sello SoulsenseRecords, evento VERTIGO y parte del duo Bangerlore.'),
 (2, 'LWCI', 'DJ de raíces argentinas basada en Las Palmas de Gran Canaria, mezcla industrial techno, tekno y lo que le pida el alma, resultando en un sonido potente y una energía imparable.'),
@@ -50,7 +50,7 @@ VALUES
 (19, 'Felix Strizzi', 'DJ y parte del duo Bangerlore. Representante de sonidos dulzones y muy bailables a través del trance, groovy, y altos BPMs.'),
 (20, 'Wyvan Cat', 'Desde el house al techno, Wyvan Cat genera un ambientazo en la pista con sus sets intencionales y bailables.');
 
-INSERT INTO `STYLE` (`id`, `name`) 
+INSERT INTO `Styles` (`id`, `name`) 
 VALUES 
 (1, 'Techno'),
 (2, 'Hard Techno'),
@@ -69,5 +69,57 @@ VALUES
 (15, 'Footwork'),
 (16, 'Funky House'),
 (17, 'Electronica'),
-(18, 'Euro-Trance');
+(18, 'Euro-Trance'),
+(19, 'Tekno'), /*estas dos por insertar*/
+(20, 'Hardgroove'),/*estas dos por insertar*/
+(21, 'House');
+
+INSERT INTO `ARTISTSTYLE` (`ArtistId`, `StyleId`) 
+VALUES
+(1,1),
+(1,20),
+(2,3),
+(2,19),
+(3,9),
+(3,3),
+(4,7),
+(4,8),
+(4,15),
+(5,21),
+(5,8),
+(5,17),
+(6,13),
+(6,2),
+(7,17),
+(8,1),
+(8,4),
+(9,2),
+(9,6),
+(9,3),
+(10,20),
+(10,1),
+(10,2),
+(11,7),
+(11,8),
+(11,10),
+(12,1),
+(12,3),
+(12,20),
+(13,1),
+(13,2),
+(13,14),
+(14,8),
+(14,20),
+(15,12),
+(15,3),
+(16,16),
+(16,20),
+(17,2),
+(17,1),
+(18,7),
+(18,11),
+(19,6),
+(19,18),
+(20,21),
+(20,1);
 

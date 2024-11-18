@@ -10,6 +10,7 @@ const {
 } = require("../controllers/style");
 
 router.get("/", getAllStyles);
+router.get("/:id/artists", eagerArtistSearchByEvent);
 router.get("/:id", getOneStyle);
 router.post("/", addStyle);
 router.put("/:id", updateStyle);

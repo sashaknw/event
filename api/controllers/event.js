@@ -78,30 +78,70 @@ async function deleteEvent(req, res) {
   }
 }
 
-async function eagerArtistSearch(req, res) {
+// async function eagerArtistSearch(req, res) {
+//   try {
+//     console.log("Fetching artist with ID:", req.params.id);
+//     if (!req.params.id) {
+//       return res.status(400).json({ message: "Artist ID is required" });
+//     }
+//     const artist = await Artist.findOne({
+//       where: {
+//         id: req.params.id,
+//       },
+//       include: [
+//         { model: Event, attributes: ["name"], through: { attributes: [] } },
+//       ],
+//     });
+//     if (!artist) {
+//       return res.status(404).json({ message: "Artist not found" });
+//     }
+
+//     return res.status(200).json({ message: "Artist found", artist: artist });
+//   } catch (error) {
+//     console.error("Error fetching artist:", error);
+//     return res.status(500).send(error.message);
+//   }
+// }
+
+
+async function eagerArtistSearchByEvent(req, res) {
   try {
-    console.log("Fetching artist with ID:", req.params.id);
-    if (!req.params.id) {
-      return res.status(400).json({ message: "Artist ID is required" });
+    const eventId = req.params.id; 
+    console.log("Fetching artists for Event ID:", eventId);
+
+    if (!eventId) {
+      return res.status(400).json({ message: "Event ID is required" });
     }
-    const artist = await Artist.findOne({
-      where: {
-        id: req.params.id,
-      },
-      include: [
-        { model: Event, attributes: ["name"], through: { attributes: [] } },
-      ],
-    });
-    if (!artist) {
-      return res.status(404).json({ message: "Artist not found" });
+    
+    const event = await Event.findByPk(eventId);
+    if (!event) {
+      return res.status(404).json({ message: "Event not found" });
     }
 
-    return res.status(200).json({ message: "Artist found", artist: artist });
+    const artists = await Artist.findAll({
+      include: [
+        {
+          model: Event,
+          where: { id: eventId }, 
+          attributes: ["name"], 
+          through: { attributes: [] } //para q no salgan los atributos de la tabla intermedia
+        }
+      ]
+    });
+
+    if (artists.length === 0) {
+      return res.status(404).json({ message: "No artists found for this event" });
+    }
+
+    return res.status(200).json({
+      artists: artists
+    });
   } catch (error) {
-    console.error("Error fetching artist:", error);
+    console.error("Error fetching artists for event:", error);
     return res.status(500).send(error.message);
   }
 }
+
 
 module.exports = {
   getAllEvents,
@@ -109,5 +149,5 @@ module.exports = {
   updateEvent,
   deleteEvent,
   addEvent,
-  eagerArtistSearch,
+  eagerArtistSearchByEvent,
 };
