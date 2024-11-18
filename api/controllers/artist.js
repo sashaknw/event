@@ -14,9 +14,7 @@ async function addArtist(req, res) {
 
     // addArtist('Tanasoul', 'DJ y productor basado en Las Palmas de Gran Canaria. Fundador del sello SoulsenseRecords, evento VERTIGO y parte del duo Bangerlore');
 
-module.exports = {
-    addArtist
-}
+
 
 async function getAllArtists(req, res) {
   try {
@@ -40,7 +38,7 @@ async function getOneArtist(req, res) {
     if (artist) {
       return res.status(200).json(artist);
     } else {
-      return res.status(404).send("Artists not found");
+      return res.status(404).send("Artist not found");
     }
   } catch (error) {
     res.status(500).send(error.message);
@@ -82,27 +80,68 @@ async function deleteArtist(req, res) {
   }
 }
 
-async function eagerArtistSearch(req, res) {
-  try {
-    console.log("Fetching artist with ID:", req.params.id);
-    if (!req.params.id) {
-      return res.status(400).json({ message: "Actor ID is required" });
-    }
-    const actor = await Actor.findOne({
-      where: {
-        id: req.params.id,
-      },
-      include: [
-        { model: Movie, attributes: ["title"], through: { attributes: [] } },
-      ],
-    });
-    if (!actor) {
-      return res.status(404).json({ message: "Actor not found" });
-    }
+// async function eagerArtistSearch(req, res) {
+//   try {
+//     console.log("Fetching artist with ID:", req.params.id);
+//     if (!req.params.id) {
+//       return res.status(400).json({ message: "Artist ID is required" });
+//     }
+//     const artist = await Artist.findOne({
+//       where: {
+//         id: req.params.id,
+//       },
+//       include: [
+//         { model: Movie, attributes: ["title"], through: { attributes: [] } },
+//       ],
+//     });
+//     if (!artist) {
+//       return res.status(404).json({ message: "Artist not found" });
+//     }
 
-    return res.status(200).json({ message: "Actor found", actor: actor });
-  } catch (error) {
-    console.error("Error fetching actor:", error);
-    return res.status(500).send(error.message);
-  }
-}
+//     return res.status(200).json({ message: "Artist found", artist: artist });
+//   } catch (error) {
+//     console.error("Error fetching artist:", error);
+//     return res.status(500).send(error.message);
+//   }
+// }
+
+
+// async function lazyArtistSearch(req, res) {
+//   try {
+//     const artist = await artist.findOne({
+//       where: {
+//         id: req.params.id,
+//       },
+//       include: {
+//         model: Movie,
+//         attributes: ["title"],
+//         through: { attributes: [] },
+//       },
+//     });
+
+//     if (!artist) {
+//       return res.status(404).json({ message: "Artis not found" });
+//     }
+
+//     const movies = await artist.getMovies({});
+//     return res.status(200).json({
+//       message: "Artist found",
+//       artist: artist,
+//       movies: movies,
+//     });
+//   } catch (error) {
+//     console.error("Error fetching artist:", error);
+//     return res.status(500).send(error.message);
+//   }
+// }
+
+module.exports = {
+  getAllArtists,
+  getOneArtist,
+  createArtist,
+  updateArtist,
+  deleteArtist,
+  eagerArtistSearch,
+  lazyArtistSearch,
+  addArtist
+};
