@@ -19,7 +19,7 @@ CREATE TABLE `EVENT` (
 	`name` VARCHAR(255),
 	`date_time` DATETIME,
 	`venue_id` INTEGER NOT NULL,
-	PRIMARY KEY(`id`)
+	PRIMARY KEY(`id`),
 	FOREIGN KEY(`venue_id`) REFERENCES `VENUE`(`id`)
 );
 
