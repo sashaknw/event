@@ -1,4 +1,5 @@
 const Style = require("../models/style");
+const Artist = require("../models/artist");
 
 async function addStyle(req, res) {
   try {

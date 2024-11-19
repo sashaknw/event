@@ -9,12 +9,12 @@ const {
   
 } = require("../controllers/artist");
 
-
+const { checkAuth, checkAdmin } = require("../middleware/auth");
 router.get("/", getAllArtists);
 router.get("/:id", getOneArtist);
-router.post("/", addArtist);
-router.put("/:id", updateArtist);
-router.delete("/:id", deleteArtist);
+router.post("/", checkAuth, checkAdmin, addArtist);
+router.put("/:id", checkAuth, checkAdmin, updateArtist);
+router.delete("/:id", checkAuth, checkAdmin, deleteArtist);
 
 
 

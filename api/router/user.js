@@ -5,18 +5,22 @@ const {
   getOneUser,
   addUser,
   updateUser,
-  deleteUser
+  updateProfile,
+  deleteUser,
+  getProfile,
+  deleteProfile
 } = require("../controllers/user");
 
 const { checkAuth, checkAdmin } = require("../middleware/auth");
 router.get("/", checkAuth, checkAdmin, getAllUsers);
 router.get("/:id", checkAuth, checkAdmin, getOneUser);
-
-router.get("/", getAllUsers);
-router.get("/:id", getOneUser);
-router.post("/", addUser);
-router.put("/:id", updateUser);
-router.delete("/:id", deleteUser);
+router.get("/profile", checkAuth, getProfile);
+router.post("/", checkAuth, checkAdmin, addUser);
+router.put("/:id", checkAuth, checkAdmin, updateUser);
+router.put("/profile/:id", checkAuth, updateProfile);
+router.delete("/:id", checkAuth, checkAdmin, deleteUser);
+router.delete("/profile/:id", checkAuth, deleteProfile);
 
 
 module.exports = router;
+  

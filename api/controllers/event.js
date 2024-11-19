@@ -1,5 +1,7 @@
 const Event = require("../models/event");
 const Artist = require("../models/artist");
+
+
 async function addEvent(req, res) {
   try {
     const event = await Event.create({

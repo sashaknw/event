@@ -5,7 +5,7 @@ const { sequelize } = require("../../database");
 const User = sequelize.define(
   "User",
   {
-    username: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -20,8 +20,8 @@ const User = sequelize.define(
       allowNull: false,
     },
     role: {
-      type: DataTypes.ENUM("Member", "Admin"),
-      defaultValue: "Member",
+      type: DataTypes.ENUM("User", "Admin"),
+      defaultValue: "User",
     },
   },
   { timestamps: false }

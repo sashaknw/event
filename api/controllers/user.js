@@ -46,6 +46,55 @@ const getProfile = async (req, res) => {
     res.status(501).send(error);
   }
 };
+async function updateProfile(req, res) {
+  try {
+    const loggedInUserId = req.user.id; // This comes from the authentication middleware
+
+    if (loggedInUserId !== parseInt(req.params.id) && !req.user.isAdmin) {
+      return res.status(403).json({ message: "You are not authorized to update this profile" });
+    }
+
+    const [profileExist, profile] = await User.update(req.body, {
+      returning: true,
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (profileExist !== 0) {
+      return res.status(200).json({ message: "Profile updated", profile: profile[0] }); // profile[0] because returning gives an array
+    } else {
+      return res.status(404).send("Profile not found");
+    }
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+async function deleteProfile(req, res) {
+  try {
+    const loggedInUserId = req.user.id; // This comes from the authentication middleware
+
+    if (loggedInUserId !== parseInt(req.params.id) && !req.user.isAdmin) {
+      return res.status(403).json({ message: "You are not authorized to delete this profile" });
+    }
+
+    const profileExist = await User.destroy( {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (profileExist !== 0) {
+      return res.status(200).json({ message: "Profile deleted"}); 
+    } else {
+      return res.status(404).send("Profile not found");
+    }
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+};
+
+
 async function updateUser(req, res) {
   try {
     const [userExist, user] = await User.update(req.body, {
@@ -62,7 +111,7 @@ async function updateUser(req, res) {
   } catch (error) {
     return res.status(500).send(error.message);
   }
-}
+};
 
 async function deleteUser(req, res) {
   try {
@@ -82,9 +131,12 @@ async function deleteUser(req, res) {
 }
 
 module.exports = {
+  getProfile,
   getAllUsers,
   getOneUser,
   updateUser,
+  updateProfile,
+  deleteProfile,
   deleteUser,
   addUser,
 };

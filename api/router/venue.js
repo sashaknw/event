@@ -6,16 +6,13 @@ const {
   addVenue,
   updateVenue,
   deleteVenue,
-  // eagerVenueSearch,
-  // lazyVenueSearch,
+ 
 } = require("../controllers/venue");
-
+const { checkAuth, checkAdmin } = require("../middleware/auth");
 router.get("/", getAllVenues);
 router.get("/:id", getOneVenue);
-router.post("/", addVenue);
-router.put("/:id", updateVenue);
-router.delete("/:id", deleteVenue);
-//router.get("/:id/movies/eager", eagerVenuesearch);
-//router.get("/:id/movies/lazy", lazyVenueSearch);
+router.post("/", checkAuth, checkAdmin, addVenue);
+router.put("/:id", checkAuth, checkAdmin, updateVenue);
+router.delete("/:id", checkAuth, checkAdmin, deleteVenue);
 
 module.exports = router;

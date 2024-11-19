@@ -6,16 +6,16 @@ const {
   addStyle,
   updateStyle,
   deleteStyle,
- 
+  eagerArtistSearchByStyle
 } = require("../controllers/style");
 
+const { checkAuth, checkAdmin } = require("../middleware/auth");
 router.get("/", getAllStyles);
-router.get("/:id/artists", eagerArtistSearchByEvent);
+router.get("/:id/artists", eagerArtistSearchByStyle); //http://localhost:3000/api/style/2/artists
 router.get("/:id", getOneStyle);
-router.post("/", addStyle);
-router.put("/:id", updateStyle);
-router.delete("/:id", deleteStyle);
-// router.get("/:id/movies/eager", eagerStyleSearch); //!!
-// router.get("/:id/movies/lazy", lazyStyleSearch); //!!
+router.post("/", addStyle, checkAuth, checkAdmin);
+router.put("/:id", checkAuth, checkAdmin, updateStyle);
+router.delete("/:id", checkAuth, checkAdmin,deleteStyle);
+
 
 module.exports = router;

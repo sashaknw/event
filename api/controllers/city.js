@@ -1,4 +1,6 @@
 const City = require("../models/city");
+const Event = require("../models/event");
+const Venue = require("../models/venue");
 
 async function addCity(req, res) {
   try {
@@ -78,6 +80,24 @@ async function deleteCity(req, res) {
   }
 }
 
+async function getEventsByCity(req, res) {
+  try {
+    const events = await City.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: {
+          model: Venue,
+          include: Event
+      },
+    });
+
+    return res.status(200).json(events);
+  } catch (error) {
+    console.error("Error fetching events by city:", error);
+    throw error;
+  }
+}
 
 
 module.exports = {
@@ -85,5 +105,6 @@ module.exports = {
   getOneCity,
   updateCity,
   deleteCity,
-  addCity
+  addCity,
+  getEventsByCity,
 };

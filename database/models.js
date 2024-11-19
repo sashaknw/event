@@ -8,10 +8,10 @@ const Style = require("../api/models/style");
    function addRelationsToModels() {
     try {
      City.hasMany(Venue);
-     Venue.belongsTo(City) ;
+     Venue.belongsTo(City, {foreignKey: 'CityId'}) ;
 
      Venue.hasOne(Event);
-     Event.belongsTo(Venue);
+     Event.belongsTo(Venue, {foreignKey: 'VenueId'});
 
       Artist.belongsToMany(Event, {
          through: "ArtistEvent",

@@ -55,7 +55,7 @@ CREATE TABLE USER (
     id INT NOT NULL AUTO_INCREMENT UNIQUE,
     name VARCHAR(255),
     pass CHAR(60), 
-    role ENUM('admin', 'user', 'professional') NOT NULL DEFAULT 'user', 
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user', 
 	PRIMARY KEY(`id`)
 )
 
