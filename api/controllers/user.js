@@ -1,5 +1,6 @@
 
-const { User } = require("../models/user");
+const User = require("../models/user");
+const bcrypt = require("bcrypt");
 
 async function addUser(req, res) {
   try {
@@ -48,12 +49,21 @@ const getProfile = async (req, res) => {
 };
 async function updateProfile(req, res) {
   try {
-    const loggedInUserId = req.user.id; // This comes from the authentication middleware
+   // This comes from the authentication middleware
 
     if (loggedInUserId !== parseInt(req.params.id) && !req.user.isAdmin) {
       return res.status(403).json({ message: "You are not authorized to update this profile" });
     }
-
+    if(req.body.password){
+      const saltRounds = bcrypt.genSaltSync(10);
+    const hasedPassword = bcrypt.hashSync(
+      req.body.password,
+      parseInt(saltRounds)
+    );
+    req.body.password = hasedPassword;
+    }
+ 
+    const loggedInUserId = req.user.id; 
     const [profileExist, profile] = await User.update(req.body, {
       returning: true,
       where: {
@@ -97,12 +107,22 @@ async function deleteProfile(req, res) {
 
 async function updateUser(req, res) {
   try {
+        if (req.body.password) {
+          const saltRounds = bcrypt.genSaltSync(10);
+          const hasedPassword = bcrypt.hashSync(
+            req.body.password,
+            parseInt(saltRounds)
+          );
+          req.body.password = hasedPassword;
+        }
     const [userExist, user] = await User.update(req.body, {
+
       returning: true,
       where: {
         id: req.params.id,
       },
     });
+
     if (userExist !== 0) {
       return res.status(200).json({ message: "User updated", user: user });
     } else {

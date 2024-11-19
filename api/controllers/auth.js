@@ -4,8 +4,8 @@ const User = require("../models/user");
 
 const signup = async (req, res) => {
   try {
-    const saltRounds = bcrypt.genSaltSync(10); //esto en .env
-    const hasedPassword = bcrypt.hashSync(req.body.password, saltRounds);
+    const saltRounds = bcrypt.genSaltSync(10); 
+    const hasedPassword = bcrypt.hashSync(req.body.password, parseInt(saltRounds));
     req.body.password = hasedPassword;
 
     const user = await User.create(req.body);
@@ -13,7 +13,7 @@ const signup = async (req, res) => {
     const token = jwt.sign(payload, "isasecret", { expiresIn: "1h" });
     res.status(200).json({ token, role: user.role, user: user.email });
   } catch (error) {
-    return res.status(500).send(error);
+    return res.status(500).send(error.message);
   }
 };
 
