@@ -1,18 +1,37 @@
 
 const User = require("../models/user");
+const Style = require("../models/style");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 async function addUser(req, res) {
   try {
+    // Check if password is provided and hash it
+    let hashedPassword = req.body.password;
+    if (req.body.password) {
+      const saltRounds = 10;
+      hashedPassword = await bcrypt.hash(req.body.password, saltRounds); // Use async hash
+    }
+
+    // Create the user with hashed password if applicable
     const user = await User.create({
       name: req.body.name,
-      description: req.body.description,
+      email:req.body.email,
+      password: hashedPassword, // Use hashed password in user creation
     });
+
     console.log("User added:", user);
+
+    // Send a response back to the client
+    res.status(201).json({ message: "User added successfully", user });
   } catch (error) {
     console.error("Error adding user:", error);
+    res
+      .status(500)
+      .json({ message: "Error adding user", error: error.message });
   }
 }
+
 
 async function getAllUsers(req, res) {
   try {
@@ -150,6 +169,34 @@ async function deleteUser(req, res) {
   }
 }
 
+async function addFavoriteStyle(req, res) {
+  try {
+    const {id} = res.locals.user;
+
+    
+    if (id === undefined) {
+      return res
+        .status(403)
+        .json({ message: "You can only add styles to your own profile" });
+    }
+
+   
+    const style = await Style.findOne({where: {name: req.body.name}});
+    const user = await User.findByPk(id);
+    if (!style) {
+      return res.status(404).send("Style not found");
+    }
+
+    // Add the style to the user's profile
+    await user.addStyle(style);
+
+    return res.status(200).json("Style added to user");
+  } catch (error) {
+    console.error("Error adding style:", error);
+    return res.status(500).send("Error adding style to user: " + error.message);
+  }
+}
+
 module.exports = {
   getProfile,
   getAllUsers,
@@ -159,4 +206,5 @@ module.exports = {
   deleteProfile,
   deleteUser,
   addUser,
+  addFavoriteStyle,
 };

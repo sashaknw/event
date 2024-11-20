@@ -5,23 +5,40 @@ const Venue = require("../api/models/venue");
 const Event = require("../api/models/event");
 const Style = require("../api/models/style");
 
-   function addRelationsToModels() {
-    try {
-     City.hasMany(Venue);
-     Venue.belongsTo(City, {foreignKey: 'CityId'}) ;
+function addRelationsToModels() {
+  try {
+    City.hasMany(Venue);
+    Venue.belongsTo(City, { foreignKey: "CityId" });
 
-     Venue.hasOne(Event);
-     Event.belongsTo(Venue, {foreignKey: 'VenueId'});
+    Venue.hasOne(Event);
+    Event.belongsTo(Venue, { foreignKey: "VenueId" });
 
-      Artist.belongsToMany(Event, {
-         through: "ArtistEvent",
-         timestamps: false,
-        });
-      
-      Artist.belongsToMany(Style, {
-         through: "ArtistStyle",
-         timestamps: false,
-        });
+    Artist.belongsToMany(Event, {
+      through: "ArtistEvent",
+      timestamps: false,
+    });
+    Event.belongsToMany(Artist, {
+      through: "ArtistEvent",
+      timestamps: false,
+    });
+
+    Style.belongsToMany(Artist, {
+      through: "ArtistStyle",
+      timestamps: false,
+    });
+    Artist.belongsToMany(Style, {
+      through: "ArtistStyle",
+      timestamps: false,
+    });
+
+    Style.belongsToMany(User, {
+      through: "UserStyle",
+      timestamps: false,
+    });
+    User.belongsToMany(Style, {
+      through: "UserStyle",
+      timestamps: false,
+    });
 
     console.log("Relations added to all models");
   } catch (error) {
@@ -30,4 +47,3 @@ const Style = require("../api/models/style");
 }
 
 module.exports = addRelationsToModels;
-

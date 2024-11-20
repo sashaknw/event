@@ -10,5 +10,14 @@ Get events in a given city (ID):
 http://localhost:3000/api/city/1/events
 
 
+Add a style (byID) to user's profile
+http://localhost:3000/api/user/profile/style/:id
 
 
+Add favorite style to user (that is logged in):
+http://localhost:3000/api/users/profile/styles
+
+parameters in body:
+{
+    "name": "Techno"
+}
