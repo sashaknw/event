@@ -3,6 +3,7 @@ const router = require("express").Router();
 const {
   getAllArtists,
   getOneArtist,
+  getArtistByName,
   addArtist,
   updateArtist,
   deleteArtist,
@@ -12,6 +13,7 @@ const {
 const { checkAuth, checkAdmin } = require("../middleware/auth");
 router.get("/", getAllArtists);
 router.get("/:id", getOneArtist);
+router.get("/search", getArtistByName);
 router.post("/", checkAuth, checkAdmin, addArtist);
 router.put("/:id", checkAuth, checkAdmin, updateArtist);
 router.delete("/:id", checkAuth, checkAdmin, deleteArtist);
