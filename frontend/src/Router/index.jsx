@@ -7,6 +7,10 @@ import Artists from "../Pages/Artists/Artists";
 import ArtistProfile from "../Pages/ArtistProfile/ArtistProfile";
 import Events from "../Pages/Events/Events"; 
 import SingleEvent from "../Pages/SingleEvent/SingleEvent"; 
+import Community from "../Pages/Community/Community";
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
+
 
 // import AdminDashboard from "../Pages/Admin/Dashboard"; // Admin page
 // import UserDashboard from "../Pages/User/Dashboard"; // User page
@@ -37,7 +41,13 @@ import SingleEvent from "../Pages/SingleEvent/SingleEvent";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: (
+      <>
+        <Header /> {/* The header will be included on every page */}
+        <Root />   {/* Root component renders the page content */}
+        <Footer /> {/* Footer component will also appear on all pages */}
+      </>
+    ),
     errorElement: <NotFound />,
     children: [
       {
@@ -57,7 +67,6 @@ const router = createBrowserRouter([
         path: "artists",
         element: <Artists />, // Artists page to display search results
       },
-      
       {
         path: "artists/:id",
         element: <ArtistProfile />, // Artist profile page
@@ -70,6 +79,15 @@ const router = createBrowserRouter([
         path: "events/:id",
         element: <SingleEvent />, // Single event details page
       },
+      {
+        path: "community",
+        element: <Community />, // Community page
+      },
+    ],
+  },
+]);
+
+export default router;
       // Dashboard route for regular users
       // {
       //   path: "user/dashboard",
@@ -82,8 +100,5 @@ const router = createBrowserRouter([
       //   element: <AdminDashboard />,
       //   loader: checkAdminLoader, // Only accessible by admins
       // },
-    ],
-  },
-]);
 
-export default router;
+

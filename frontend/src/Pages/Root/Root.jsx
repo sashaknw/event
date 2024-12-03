@@ -1,26 +1,19 @@
-
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import Header from "../../Components/Header/Header"; // Import Header component
+import { Outlet } from "react-router-dom"; // Outlet renders page-specific content
+import "./Root.css"; // Optional styling for layout
 
 const Root = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/auth/signup">Sign Up</Link>
-            </li>
-            <li>
-              <Link to="/auth/login">Log In</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <div className="root-container">
+     
       <main>
-        <h1>Welcome to Our App</h1>
-        <Outlet />
+        <Outlet /> {/* This will render the page-specific content */}
       </main>
+      {/* Footer - This will appear on every page */}
+      <footer className="footer">
+        <p>&copy; 2024 Event Website. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
