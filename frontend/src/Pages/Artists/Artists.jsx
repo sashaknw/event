@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { searchArtistsByName } from "../../Services/ArtistsServices";
+import { getArtistByName } from "../../Services/ArtistsServices";
 import ArtistsCard from "../../Components/ArtistsCards/ArtistsCard";
 
 const Artists = () => {
@@ -13,10 +13,11 @@ const Artists = () => {
     if (searchTerm) {
       setLoading(true); 
       try {
-        const result = await searchArtistsByName(searchTerm); 
+        const result = await getArtistByName(searchTerm); 
+        console.log("Artists found:", result);
         setArtists(result); 
       } catch (error) {
-        console.error("Error fetching artists", error);
+        console.error("Error fetching artist", error);
         setArtists([]); 
       } finally {
         setLoading(false); 
@@ -27,11 +28,8 @@ const Artists = () => {
   };
 
   return (
-    
-
 
     <div>
-      
       <h2>Artists</h2>
       <input
         type="text"
@@ -41,7 +39,7 @@ const Artists = () => {
       />
       <button onClick={handleSearch}>Buscar</button>
 
-      {loading && <p>Loading...</p>}
+      {loading && <p>Cargando...</p>}
 
       <div className="artist-list">
   {artists.length > 0 ? (

@@ -1,55 +1,25 @@
-import { createBrowserRouter, redirect } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import NotFound from "../Pages/NotFound/NotFound";
 import Signup from "../Pages/Auth/Signup/Signup";
 import Login from "../Pages/Auth/Login/Login";
 import Root from "../Pages/Root/Root";
 import Artists from "../Pages/Artists/Artists";
 import ArtistProfile from "../Pages/ArtistProfile/ArtistProfile";
-import Events from "../Pages/Events/Events"; 
-import SingleEvent from "../Pages/SingleEvent/SingleEvent"; 
+import Events from "../Pages/Events/Events";
+import SingleEvent from "../Pages/SingleEvent/SingleEvent";
 import Community from "../Pages/Community/Community";
-import Header from "../Components/Header/Header";
-import Footer from "../Components/Footer/Footer";
-
-
-// import AdminDashboard from "../Pages/Admin/Dashboard"; // Admin page
-// import UserDashboard from "../Pages/User/Dashboard"; // User page
-
-
-// const checkAuthLoader = () => {
-//   const token = localStorage.getItem("token");
-//   const userRole = localStorage.getItem("role"); 
-
-//   if (!token) {
-//     return redirect("/auth/login"); 
-//   }
-
-//   return { token, userRole }; 
-// };
-
-
-// const checkAdminLoader = () => {
-//   const { userRole } = checkAuthLoader(); 
-
-//   if (userRole !== "admin") {
-//     return redirect("/"); 
-//   }
-
-//   return null; 
-// };
+import Home from "../Pages/Home/Home"; // Import Home page
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <Header /> {/* The header will be included on every page */}
-        <Root />   {/* Root component renders the page content */}
-        <Footer /> {/* Footer component will also appear on all pages */}
-      </>
-    ),
+    element: <Root />, // Use Root component as layout
     errorElement: <NotFound />,
     children: [
+      {
+        path: "/",
+        element: <Home />, // Home page renders here
+      },
       {
         path: "auth",
         children: [
@@ -65,40 +35,26 @@ const router = createBrowserRouter([
       },
       {
         path: "artists",
-        element: <Artists />, // Artists page to display search results
+        element: <Artists />,
       },
       {
         path: "artists/:id",
-        element: <ArtistProfile />, // Artist profile page
+        element: <ArtistProfile />,
       },
       {
         path: "events",
-        element: <Events />, // Event listing page
+        element: <Events />,
       },
       {
         path: "events/:id",
-        element: <SingleEvent />, // Single event details page
+        element: <SingleEvent />,
       },
       {
         path: "community",
-        element: <Community />, // Community page
+        element: <Community />,
       },
     ],
   },
 ]);
 
 export default router;
-      // Dashboard route for regular users
-      // {
-      //   path: "user/dashboard",
-      //   element: <UserDashboard />,
-      //   loader: checkAuthLoader, // Protect the route for authenticated users
-      // },
-      // // Admin-only route
-      // {
-      //   path: "admin/dashboard",
-      //   element: <AdminDashboard />,
-      //   loader: checkAdminLoader, // Only accessible by admins
-      // },
-
-

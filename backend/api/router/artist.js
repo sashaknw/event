@@ -11,9 +11,9 @@ const {
 } = require("../controllers/artist");
 
 const { checkAuth, checkAdmin } = require("../middleware/auth");
+router.get("/search", getArtistByName);
 router.get("/", getAllArtists);
 router.get("/:id", getOneArtist);
-router.get("/search", getArtistByName);
 router.post("/", checkAuth, checkAdmin, addArtist);
 router.put("/:id", checkAuth, checkAdmin, updateArtist);
 router.delete("/:id", checkAuth, checkAdmin, deleteArtist);

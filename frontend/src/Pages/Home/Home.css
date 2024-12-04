@@ -1,47 +1,133 @@
-.home-page {
-    font-family: Arial, sans-serif;
-    color: #333;
+/* General Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Outfit', sans-serif;
+background-color: black;
+color: white;
+}
+.home {
+max-width: 1440px;
+margin: 0 auto;
+padding: 20px;
+}
+/* Header */
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+}
+.nav {
+display: flex;
+gap: 20px;
+}
+.nav a {
+
+color: white;
+text-decoration: none;
+font-weight: 600;
+}
+.btn {
+background-color: #F788B8;
+color: white;
+border: none;
+border-radius: 20px;
+padding: 10px 20px;
+cursor: pointer;
+}
+.acceso-artista {
+font-weight: 600;
+}
+.btn:hover {
+background-color: #ff99cc;
+}
+/* Hero Section */
+.hero {
+text-align: center;
+margin: 40px 0;
+}
+.hero .title {
+font-size: 64px;
+font-weight: bold;
+}
+.hero .subtitle {
+font-size: 48px;
+font-style: italic;
+color: #F788B8;
+}
+/* Content Section */
+.content {
+display: flex;
+gap: 40px;
+margin-top: 40px;
+}
+.left img {
+border-radius: 26px;
+width: 100%;
 }
 
-.home-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px;
+.right {
+max-width: 500px;
 }
-
-.center-image img {
-    width: 100%;
-    height: auto;
-    max-width: 1200px;
-    border-radius: 10px;
+.right h2 {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 20px;
 }
-
-.search-container {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.right .description {
+font-size: 16px;
+line-height: 1.5;
+margin-bottom: 20px;
 }
-
+.search-bar {
+display: flex;
+gap: 10px;
+margin-top: 20px;
+}
 .search-bar input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+flex: 1;
+padding: 10px;
+border: 2px solid #ccc;
+border-radius: 20px;
+}
+.search-btn {
+padding: 10px;
+background-color: #F788B8;
+color: white;
+border: none;
+border-radius: 20px;
+}
+/* CTA Section */
+.cta {
+text-align: center;
+margin: 60px 0;
+}
+.cta h2 {
+font-size: 32px;
+font-weight: bold;
+margin-bottom: 10px;
 }
 
-.search-bar button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.cta p {
+font-size: 20px;
+margin-bottom: 20px;
 }
-
-.search-bar button:hover {
-    background-color: #0056b3;
+/* Footer */
+.footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 40px;
+}
+.footer .left p,
+.footer .right p {
+font-size: 16px;
+line-height: 1.5;
+}
+.footer .highlight {
+color: #F788B8;
 }

@@ -1,3 +1,4 @@
+const { Op } = require("sequelize");
 const Artist = require("../models/artist");
 
 async function addArtist(req, res) {
@@ -83,16 +84,16 @@ async function deleteArtist(req, res) {
 
 async function getArtistByName(req, res) {
   try {
-    const artistName = req.params.name;
+    const artistName = req.query.name;
     const artist = await Artist.findAll({
       where: {
         name: {
-          [Op.iLike]: `%${artistName}%`,
+          [Op.like]: `%${artistName}%`,
         },
       },
     });
-    if (artists.length > 0) {
-      return res.status(200).json(artists);
+    if (artist.length > 0) {
+      return res.status(200).json(artist);
     } else {
       return res.status(404).send("No artists found");
     }

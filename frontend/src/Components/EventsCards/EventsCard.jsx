@@ -6,7 +6,7 @@ const EventCard = ({ event }) => {
     <div className="event-card">
       <h3>{event.name}</h3>
       <p>{new Date(event.date_time).toLocaleString()}</p> {/* Format date */}
-      <Link to={`/events/${event.id}`}>View Details</Link>{" "}
+      {" "}
     
     </div>
   );

@@ -1,12 +1,18 @@
 import api from "./api";
 import axios from "axios";
 
-export const searchArtistsByName = async (name) => {
+export const getArtistByName = async (name) => {
   try {
-    const response = await api.get(`/artists/search?name=${name}`); // API call with query parameter
-    return response.data; // Return the found artists
+    const response = await axios.get('/api/artist/search', {
+      params: { name }, 
+    });
+
+    console.log("Response from backend:", response.data);
+
+    
+   return Array.isArray(response.data) ? response.data : [];
   } catch (error) {
-    console.error("Error al buscar artista", error);
-    throw error;
+    console.error("Error fetching artist:", error);
+    throw error; 
   }
 };

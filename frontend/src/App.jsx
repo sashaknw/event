@@ -23,6 +23,7 @@ import { RouterProvider } from "react-router-dom"; // RouterProvider for renderi
 
 function App() {
   return <RouterProvider router={router} />; // Use RouterProvider to provide the routes
+  
 }
 
 export default App;

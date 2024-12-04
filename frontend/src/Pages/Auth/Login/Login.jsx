@@ -24,6 +24,7 @@ const Login = () => {
     <div>
       <h2>Login</h2>
       <LoginComponent onLoginSuccess={handleLoginSuccess} />
+      <p>¿No tienes cuenta? <a href="/auth/signup">Regístrate</a></p>
     </div>
   );
 };

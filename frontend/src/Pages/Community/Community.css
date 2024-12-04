@@ -1,26 +1,170 @@
-/* Community.css */
-
-/* Basic styling for the Community page */
-.community-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 20px;
-    background-color: #f8f8f8;
-    font-family: Arial, sans-serif;
+/* Comunidad styles */
+.Comunidad {
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  background: white;
+  border: 1px solid black;
 }
 
-.community-container h2 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
+.Rectangle42 {
+  width: 1440px;
+  height: 1024px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: black;
 }
 
-.community-container p {
-    font-size: 18px;
-    color: #555;
-    max-width: 600px;
-    text-align: center;
+.Eventos, .Artistas, .Comunidad-text {
+  width: 147px;
+  height: 47px;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-family: 'Outfit';
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.Eventos {
+  left: 730px;
+  top: 25px;
+}
+
+.Artistas {
+  left: 884px;
+  top: 25px;
+}
+
+.Comunidad-text {
+  width: 211px;
+  height: 47px;
+  left: 1037px;
+  top: 25px;
+}
+
+.UsuarioSignOut {
+  width: 169px;
+  height: 47px;
+  left: 1261px;
+  top: 25px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Outfit';
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.UsuarioSignOut span {
+  color: white;
+  font-size: 20px;
+  font-family: 'Outfit';
+  font-weight: 600;
+}
+
+.UsuarioSignOut .signOut {
+  color: #F788B8;
+}
+
+/* Comunidad Title */
+.Comunidad-title {
+  width: 440px;
+  height: 88px;
+  left: 134px;
+  top: 142px;
+  position: absolute;
+  color: white;
+  font-size: 64px;
+  font-family: 'Inter';
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Group and circle styles */
+.Ellipse3, .Ellipse4, .Ellipse5, .Ellipse6 {
+  width: 217px;
+  height: 217px;
+  position: absolute;
+  background: linear-gradient(0deg, #6D6D6D 0%, #6D6D6D 100%);
+  border-radius: 9999px;
+}
+
+.Ellipse3 { left: 138px; top: 634px; }
+.Ellipse4 { left: 454px; top: 634px; }
+.Ellipse5 { left: 770px; top: 634px; }
+.Ellipse6 { left: 1086px; top: 634px; }
+
+.HolaNoSeQuePoner {
+  width: 555px;
+  height: 158px;
+  left: 442px;
+  top: 300px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 64px;
+  font-family: 'Outfit';
+  font-weight: 600;
+  line-height: 59px;
+  word-wrap: break-word;
+}
+
+/* Search and button styles */
+.Search {
+  width: 24px;
+  height: 25px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+/* Other classes */
+.CompartirMSica, .CompraVenta, .OrganizaciNEvento, .Otros {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: 'Outfit';
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.CompartirMSica { width: 132px; height: 50px; left: 181px; top: 879px; }
+.CompraVenta { width: 132px; height: 50px; left: 502px; top: 879px; }
+.OrganizaciNEvento { width: 206px; height: 50px; left: 781px; top: 879px; }
+.Otros { width: 206px; height: 25px; left: 1098px; top: 879px; }
+
+/* Group11 styles */
+.Group11 {
+  width: 355px;
+  left: 398px;
+  top: 499px;
+  position: absolute;
+}
+
+.BuscaEventosYArtistas {
+  width: 313px;
+  height: 22px;
+  left: 42px;
+  top: 0;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'Inter';
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.Vector {
+  width: 16px;
+  height: 16.67px;
+  border: 2px solid black;
+}
+
+.Vector2 {
+  width: 4.35px;
+  height: 4.53px;
+  border: 2px solid black;
 }
