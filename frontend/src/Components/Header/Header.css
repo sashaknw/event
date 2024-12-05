@@ -29,14 +29,7 @@
     font-weight: 600;
 }
 
-.btn {
-    background-color: #F788B8;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
+
 
 .acceso-artista {
     font-weight: 600;
@@ -47,3 +40,23 @@
     transform: scale(1.1);
 }
 
+.acceso-artista {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 14rem;
+    height: 2.5rem;
+}
+
+.groupArtista{
+    width:100%;
+    position: relative;
+    height: 3.20rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: white;
+
+}

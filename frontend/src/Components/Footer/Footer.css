@@ -1,17 +1,54 @@
-/* Footer Styling */
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
+    padding: 2rem;
+    background-color: transparent;
+    color: white;
 }
 
-.footer .left p,
-.footer .right p {
-    font-size: 16px;
-    line-height: 1.5;
+.left {
+    width: 20%;
+    text-align: left;
 }
 
-.footer .highlight {
+.left-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.left-image {
+    width: 10px;
+}
+
+.logo {
+    max-width: 40px;
+    height: auto;
+}
+
+.highlight {
     color: #F788B8;
+}
+
+.right {
+    width: 50%;
+    text-align: right;
+}
+
+.right-nav a {
+    font-size: 1.2rem;
+    color: #F788B8;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.icons svg {
+    width: 30px;
+    height: 30px;
 }

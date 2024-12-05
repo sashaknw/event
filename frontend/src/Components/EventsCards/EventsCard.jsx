@@ -13,22 +13,21 @@ const EventCard = ({ event }) => {
 
   return (
     <div className="event-card">
-      <img
-        src={event.img || '../assets/Carteles/ex-squeezit.jpg'}
-        alt={event.name}
-        className="event-image"
-      />
-      <h3>{event.name}</h3>
-      <p>{event.location}</p>
-
-      <div className="date">
-        <span className="date-month">{month}</span>
-        <span className="date-day">{day}</span>
-      </div>
-
       <Link to={`/events/${event.id}`} className="view-details-link">
-        Ver detalles
+        <img
+          src={event.img || "../assets/Carteles/ex-squeezit.jpg"}
+          alt={event.name}
+          className="event-image"
+        />
       </Link>
+        
+        <h3>{event.name}</h3>
+        <p>{event.location}</p>
+
+        <div className="date">
+          <span className="date-month">{month}</span>
+          <span className="date-day">{day}</span>
+        </div>
       <button className="btn">¡APÚNTATE!</button>
     </div>
   );

@@ -1,0 +1,97 @@
+/* General Popup Background Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it is above the content */
+}
+
+/* Popup content box */
+.popup-content {
+  background-color: #F788B8; /* Custom color for the popup */
+  padding: 20px;
+  border-radius: 26px;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1001;
+  height: 26rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+  color: white;
+  z-index: 1100;
+}
+
+/* Title Styling */
+h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 4rem;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border: 1px solid #ccc;
+  border-radius: 26px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+.entrar-button {
+  background-color: black;
+  font-weight: 600;
+  color: white;
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  border-radius: 26px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.entrar-button:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+
+/* For blurred page effect when popup is open */
+.content.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Disable interaction with the background */
+}
+
+.content {
+  transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Access Popup Main Div */
+.acess-main-div {
+  position: relative;
+}
+
+p {
+  margin-top: 1rem;
+}

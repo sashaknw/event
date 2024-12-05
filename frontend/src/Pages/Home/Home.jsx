@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer"; 
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="home">
@@ -36,7 +37,9 @@ const Home = () => {
             <div className="seccion-ver-eventos-y-buscar">
               <div className="button-ver-eventos">
                 <div className="button-ver-eventos-child" />
-                <button className="ver-eventos">VER EVENTOS</button>
+                <Link to="/events">
+                <button className="ver-eventos" >VER EVENTOS</button>
+                </Link>
               </div>
               <div className="buscar-eveto-y-artista-parent">
                 <input
