@@ -71,7 +71,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin: 40px 0;
+  margin-bottom: 100px;
+  margin-top: 40px;
 }
 
 .category {
@@ -89,46 +90,28 @@ body {
 }
 
 .icon.star {
-  background-image: url("frontend/public/assets/iconos comunidad/1.png");
+  background-image: url("assets/iconos comunidad/1.png");
   background-size: cover;
 }
 
 .icon.cross {
-  background-color: #f5a3ca;
-  clip-path: polygon(
-    50% 0%,
-    65% 35%,
-    100% 50%,
-    65% 65%,
-    50% 100%,
-    35% 65%,
-    0% 50%,
-    35% 35%
-  );
+  background-image: url("assets/iconos comunidad/2.png");
+  background-size: cover;
 }
 
 .icon.wave {
-  background-color: #f5a3ca;
-  clip-path: polygon(
-    50% 0%,
-    75% 25%,
-    100% 50%,
-    75% 75%,
-    50% 100%,
-    25% 75%,
-    0% 50%,
-    25% 25%
-  );
+  background-image: url("assets/iconos comunidad/3.png");
+  background-size: cover;
 }
 
 .icon.polygon {
-  background-color: #f5a3ca;
-  clip-path: polygon(50% 0%, 85% 35%, 70% 85%, 30% 85%, 15% 35%);
+  background-image: url("assets/iconos comunidad/4.png");
+  background-size: cover;
 }
 
 .cta {
   text-align: center;
-  margin: 50px 0;
+  margin: 100px 0px;
 }
 
 .register-button {
