@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 // Define the base URL for your API (you can modify this if you have a different base URL)
@@ -35,6 +36,17 @@ export const getArtistsByEvent = async (eventId) => {
       `Error fetching artists for event with ID ${eventId}:`,
       error
     );
+    throw error;
+  }
+};
+
+
+export const getEventByName = async (name) => {
+  try {
+    const response = await axios.get(`${API_URL}?name=${name.toLowerCase()}`);
+    return response.data; // Return matching events
+  } catch (error) {
+    console.error("Error fetching events:", error);
     throw error;
   }
 };

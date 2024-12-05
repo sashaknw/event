@@ -1,111 +1,86 @@
+
+
 /* General Reset */
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-font-family: 'Outfit', sans-serif;
-background-color: black;
-color: white;
+    font-family: 'Outfit', sans-serif;
+    background-color: black;
+    color: white;
 }
-.container {
-max-width: 1440px;
-margin: 0 auto;
-padding: 20px;
+.title {
+    
 }
+
+/* Event Page Layout */
+.events-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Header */
 .header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 0;}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
 .nav {
-display: flex;
-align-items: center;
-gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+
 .nav a {
-color: white;
-text-decoration: none;
-font-weight: 600;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
 }
-.user {
-display: flex;
-align-items: center;
-gap: 10px;
+
+.acceso-artista {
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
 }
-.logout {
-color: #F788B8;
+
+.acceso-artista:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
 }
+
 /* Title Section */
 .title-section {
-text-align: center;
-margin: 40px 0;
+    text-align: center;
+    margin: 40px 0;
 }
+
 .title-section h1 {
-font-size: 64px;
-font-weight: 600;
+    font-size: 64px;
+    font-weight: 600;
 }
+
 .title-section .subtitle {
-font-size: 48px;
-font-style: italic;
-color: #F788B8;
+    font-size: 48px;
+    font-style: italic;
+    color: #F788B8;
+    font-family: "Syne Tactile", system-ui;;
 }
-/* Cards Section */
-.cards {
-display: flex;
-gap: 20px;
-justify-content: center;
-flex-wrap: wrap;
-}
-.card {background-color: #1a1a1a;
-border-radius: 26px;
-padding: 20px;
-text-align: center;
-max-width: 370px;
-}
-.card-img {
-border-radius: 26px;
-width: 100%;
-margin-bottom: 20px;
-}
-.card h2 {
-font-size: 20px;
-font-weight: 600;
-margin-bottom: 10px;
-}
-.card p {
-font-size: 16px;
-margin-bottom: 20px;
-}
-.date {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-margin-bottom: 20px;
-}
-.date strong {
-font-size: 64px;
-font-weight: 600;
-}
-.btn {
-background-color: #F788B8;
-color: white;
-border: none;
-border-radius: 20px;
-padding: 10px 20px;
-cursor: pointer;
-}
-.btn:hover {
-background-color: #ff99cc;
-}
-.login-button {
-    background-color: #F788B8;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
+
+/* Events Grid Layout */
+.events-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    /* Allow wrapping in case of large screens */
 }

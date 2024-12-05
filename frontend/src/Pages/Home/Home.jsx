@@ -7,7 +7,7 @@ const Home = () => {
       <header className="header">
         <div className="logo">
           <img
-            src="https://via.placeholder.com/50"
+            src="/assets/Logo/chuchango-logo.png"
             alt="Logo"
             className="logo-img"
           />
@@ -21,9 +21,11 @@ const Home = () => {
       </header>
       {/* Main Content */}
       <main>
-        <section className="hero">
-          <h1 className="title">CHUCHANGO</h1>
-          <p className="subtitle">Gran Canaria</p>
+        <section className="main-lettering">
+          <img
+            src="/assets/Elementos/title letters chuchango.png"
+            alt="Chuchango"
+          ></img>
         </section>
         <section className="content">
           <div className="left">
@@ -34,15 +36,28 @@ const Home = () => {
             />
           </div>
           <div className="right">
+            <img
+              src="/assets/Elementos/palette.png"
+              alt="Palette"
+              className="palette-image"
+            />
             <h2>EVENTOS DE MÚSICA ELECTRÓNICA EN LAS PALMAS</h2>
             <p className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               vitae ante vel enim placerat laoreet. Aliquam erat volutpat.
             </p>
-            <button className="btn">VER EVENTOS</button>
-            <div className="search-bar">
-              <input type="text" placeholder="Busca eventos y artistas" />
-              <button className="search-btn">�</button>
+            <div className="seccion-ver-eventos-y-buscar">
+              <div className="button-ver-eventos">
+                <div className="button-ver-eventos-child" />
+                <button className="ver-eventos">VER EVENTOS</button>
+              </div>
+              <div className="buscar-eveto-y-artista-parent">
+                <input
+                  className="buscar-eveto-y-artista"
+                  placeholder="Busca eventos y artistas"
+                />
+                {/* aqui falta icono buscar */}
+              </div>
             </div>
           </div>
         </section>

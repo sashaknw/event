@@ -1,0 +1,90 @@
+/* EventCard.css */
+
+/* Event Card */
+.event-card {
+    background-color: #1a1a1a;
+    border-radius: 26px;
+    padding: 20px;
+    text-align: center;
+    max-width: 370px;
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding doesn't exceed max-width */
+    margin-bottom: 40px;
+    /* Give some space below each card */
+}
+
+/* Event Image */
+.event-card .event-image {
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    /* Ensures the image covers the card without distortion */
+    height: 250px;
+    /* Fixed height for images */
+}
+
+/* Event Title */
+.event-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Event Location */
+.event-card .location {
+    font-size: 16px;
+    color: #F788B8;
+    margin-bottom: 20px;
+}
+
+/* Date Section */
+.event-card .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.event-card .date-month {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: white;
+}
+
+.event-card .date-day {
+    font-size: 64px;
+    font-weight: 600;
+    color: white;
+}
+
+/* Button */
+.event-card .btn {
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.event-card .btn:hover {
+    background-color: #ff99cc;
+}
+
+/* View Details Link */
+.event-card .view-details-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #F788B8;
+    text-decoration: none;
+}
+
+.event-card .view-details-link:hover {
+    text-decoration: underline;
+}

@@ -1,133 +1,233 @@
 /* General Reset */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 3px;
+    box-sizing: border-box;
 }
+
 body {
-font-family: 'Outfit', sans-serif;
-background-color: black;
-color: white;
+    font-family: 'Outfit', sans-serif;
+    background-color: black;
+    color: white;
 }
+
 .home {
-max-width: 1440px;
-margin: 0 auto;
-padding: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
 }
+
 /* Header */
 .header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
 }
-.nav {
-display: flex;
-gap: 20px;
-}
-.nav a {
 
-color: white;
-text-decoration: none;
-font-weight: 600;
+.nav {
+    display: flex;
+    gap: 20px;
 }
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .btn {
-background-color: #F788B8;
-color: white;
-border: none;
-border-radius: 20px;
-padding: 10px 20px;
-cursor: pointer;
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
+
 .acceso-artista {
-font-weight: 600;
+    font-weight: 600;
 }
+
 .btn:hover {
-background-color: #ff99cc;
+    background-color: #ff99cc;
+    transform: scale(1.1);
 }
-/* Hero Section */
-.hero {
-text-align: center;
-margin: 40px 0;
-}
-.hero .title {
-font-size: 64px;
-font-weight: bold;
-}
-.hero .subtitle {
-font-size: 48px;
-font-style: italic;
-color: #F788B8;
-}
+
 /* Content Section */
 .content {
-display: flex;
-gap: 40px;
-margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
 }
+.palette-image {
+    margin-left: 300px;
+}
+
 .left img {
-border-radius: 26px;
-width: 100%;
+    border-radius: 26px;
+    width: 100%;
 }
 
 .right {
-max-width: 500px;
+    max-width: 500px;
 }
+
 .right h2 {
-font-size: 24px;
-font-weight: bold;
-margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
+
 .right .description {
-font-size: 16px;
-line-height: 1.5;
-margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
-.search-bar {
-display: flex;
-gap: 10px;
-margin-top: 20px;
+
+/* Main chuchango Lettering */
+.main-lettering img {
+    width: 80vw;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
 }
-.search-bar input {
-flex: 1;
-padding: 10px;
-border: 2px solid #ccc;
-border-radius: 20px;
+
+/* Section to hold search input and button */
+.seccion-ver-eventos-y-buscar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
 }
-.search-btn {
-padding: 10px;
-background-color: #F788B8;
-color: white;
-border: none;
-border-radius: 20px;
+
+.buscar-eveto-y-artista-parent {
+    flex-grow: 2;
+    /* Make the input field take available space */
+    position: relative;
 }
+
+.buscar-eveto-y-artista {
+    border-radius: 64px;
+    background-color: #fff;
+    height: 3.188rem;
+    padding-left: 1.5rem;
+    font-size: 1.25rem;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+    /* Make the input fill the available space */
+}
+
+.ver-eventos {
+    font-weight: 600;
+    width: 150px;
+    /* Fixed width for the button */
+    height: 3.188rem;
+    border-radius: 64px;
+    background-color: #000;
+    color: white;
+    border: white 3px solid ;
+    padding: 0 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Ensure text doesn't wrap */
+}
+
+.ver-eventos:hover {
+    background-color: #F788B8;
+    border: none;
+    transform: scale(1.1);
+}
+
 /* CTA Section */
 .cta {
-text-align: center;
-margin: 60px 0;
+    text-align: center;
+    margin: 60px 0;
 }
+
 .cta h2 {
-font-size: 32px;
-font-weight: bold;
-margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .cta p {
-font-size: 20px;
-margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
+
 /* Footer */
 .footer {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
 }
+
 .footer .left p,
 .footer .right p {
-font-size: 16px;
-line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.5;
 }
+
 .footer .highlight {
-color: #F788B8;
+    color: #F788B8;
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.footer .left p,
+.footer .right p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footer .highlight {
+    color: #F788B8;
+}
+
+/* Main Section Content */
+.main-section {
+    width: 85.26138rem;
+    height: 11.94425rem;
+    flex-shrink: 0;
+}
+
+.left img {
+    width: 100%;
+}
+
+/* Adjustments for the Right Section */
+.right {
+    max-width: 500px;
+}
+
+.right h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.right .description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Make sure images are responsive */
+.main-image {
+    border-radius: 26px;
+    width: 100%;
+    max-width: 682px;
+    height: auto;
 }

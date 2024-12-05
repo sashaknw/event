@@ -1,0 +1,192 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Page Layout */
+.artistas-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.logo-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn {
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.acceso-artista {
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.conocelos {
+    font-size: 24px;
+    font-family: "Syne Tactile", system-ui;
+    color: #F788B8;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input-container input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 2px solid #ccc;
+    width: 300px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
+}
+
+.loading-text {
+    font-size: 16px;
+    color: #F788B8;
+    margin-top: 10px;
+}
+
+/* Artist Display */
+.artists-display {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.artist-card {
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    color: white;
+}
+
+.artist-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.artist-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.artist-card p {
+    font-size: 16px;
+    color: #F788B8;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons span {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.social-icons span:hover {
+    color: #F788B8;
+    transform: scale(1.1);
+}
+
+/* Empty card for spacing */
+.empty-card {
+    background-color: transparent;
+    width: 250px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.footer .left p,
+.footer .right p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footer .highlight {
+    color: #F788B8;
+}

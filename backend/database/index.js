@@ -1,5 +1,7 @@
 //copiado del LAB sequelize-relationship
 const { Sequelize } = require("sequelize");
+require('dotenv').config();
+
 
 // Connect to PostgreSQL creating a new sequelize instance
 const sequelize = new Sequelize(

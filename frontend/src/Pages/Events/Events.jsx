@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import EventCard from "../../Components/EventsCards/EventsCard"; // Import EventCard component
 import "./Events.css"; // Ensure you import the appropriate CSS file
-import { getAllEvents } from "../../Services/EventsServices"; // Adjust if the path is different
+import { getAllEvents } from "../../Services/EventsServices"; 
+import Header from "../../Components/Header/Header"; 
 
-const EventosPage = () => {
+const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        // Fetch events from the API (you can also limit the data here if needed)
+        // Fetch events from the API
         const data = await getAllEvents();
         setEvents(data.slice(0, 3)); // Display only the first 3 events
       } catch (error) {
@@ -26,27 +27,9 @@ const EventosPage = () => {
   if (loading) return <p>Cargando eventos...</p>;
 
   return (
-    <div className="container">
-      {/* Header */}
-      <header className="header">
-        <div className="logo">
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Logo"
-            className="logo-img"
-          />
-        </div>
-        <nav className="nav">
-          <a href="#eventos">Eventos</a>
-          <a href="#artistas">Artistas</a>
-          <a href="#comunidad">Comunidad</a>
-          <div className="user">
-            <button className="login-button">
-              <Link to="/auth/login">INICIAR SESIÓN</Link>
-            </button>
-          </div>
-        </nav>
-      </header>
+    <div className="events-page">
+      
+      <Header />
 
       {/* Main Section */}
       <main>
@@ -56,26 +39,9 @@ const EventosPage = () => {
         </section>
 
         {/* Cards Section */}
-        <section className="cards">
+        <section className="events-grid">
           {events.map((evento) => (
-            <article className="card" key={evento.id}>
-              <img
-                src={evento.img || "https://via.placeholder.com/370x502"}
-                alt={evento.title}
-                className="card-img"
-              />
-              <h2>{evento.title}</h2>
-              <p>{evento.location}</p>
-              <div className="date">
-                <span>{evento.date?.month}</span>
-                <strong>{evento.date?.day}</strong>
-                <span>{evento.date?.dayLabel}</span>
-              </div>
-              <button className="btn">Comprar Entrada</button>
-              <Link to={`/events/${evento.id}`} className="view-details-link">
-                Ver detalles
-              </Link>
-            </article>
+            <EventCard key={evento.id} event={evento} /> // Use EventCard component
           ))}
         </section>
       </main>
@@ -83,4 +49,4 @@ const EventosPage = () => {
   );
 };
 
-export default EventosPage;
+export default Events;

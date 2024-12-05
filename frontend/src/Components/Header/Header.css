@@ -1,0 +1,49 @@
+/* Components/Header.css */
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.logo-button:hover {
+   transform: scale(1.1);
+
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn {
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.acceso-artista {
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
+}
+
