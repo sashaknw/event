@@ -178,23 +178,7 @@ body {
     color: #F788B8;
 }
 
-/* Footer Styling */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-}
 
-.footer .left p,
-.footer .right p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.footer .highlight {
-    color: #F788B8;
-}
 
 /* Main Section Content */
 .main-section {

@@ -1,24 +1,11 @@
 import React from "react";
 import "./Home.css";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer"; 
 const Home = () => {
   return (
     <div className="home">
-      {/* Header */}
-      <header className="header">
-        <div className="logo">
-          <img
-            src="/assets/Logo/chuchango-logo.png"
-            alt="Logo"
-            className="logo-img"
-          />
-        </div>
-        <nav className="nav">
-          <a href="events">EVENTOS</a>
-          <a href="artists">ARTISTAS</a>
-          <a href="community">COMUNIDAD</a>
-          <button className="btn acceso-artista">ACCESO ARTISTA</button>
-        </nav>
-      </header>
+      <Header />
       {/* Main Content */}
       <main>
         <section className="main-lettering">
@@ -69,23 +56,9 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="left">
-          <p>
-            En <span className="highlight">Chuchango</span> difundimos y
-            apoyamos los eventos locales para promover la cultura underground
-          </p>
-        </div>
-        <div className="right">
-          <p>
-            Eventos
-            <br />
-            Artistas
-            <br />
-            Comunidad
-          </p>
-        </div>
-      </footer>
+      
+        <Footer />
+     
     </div>
   );
 };

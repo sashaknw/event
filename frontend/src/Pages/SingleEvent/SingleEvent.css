@@ -1,0 +1,121 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Container */
+.single-event-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Event Title */
+.event-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+}
+
+/* Event Poster */
+.event-poster {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.poster-image {
+    width: 80%;
+    height: auto;
+    border-radius: 26px;
+}
+
+/* Artists Section */
+.artists-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.artist-button {
+    padding: 10px 20px;
+    background-color: #F788B8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.artist-button:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
+}
+
+/* Event Date */
+.event-date {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.date-month, .date-day, .date-year {
+    margin-right: 10px;
+}
+
+/* Sign Up Button */
+.sign-up-button {
+    margin-top: 40px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.sign-up-button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+/* Social Media Icons */
+.social-media-icons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media-icons a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-media-icons a:hover {
+    color: #F788B8;
+}

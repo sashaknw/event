@@ -3,6 +3,7 @@ import EventCard from "../../Components/EventsCards/EventsCard"; // Import Event
 import "./Events.css"; // Ensure you import the appropriate CSS file
 import { getAllEvents } from "../../Services/EventsServices"; 
 import Header from "../../Components/Header/Header"; 
+import Footer from "../../Components/Footer/Footer";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -28,7 +29,6 @@ const Events = () => {
 
   return (
     <div className="events-page">
-      
       <Header />
 
       {/* Main Section */}
@@ -45,6 +45,8 @@ const Events = () => {
           ))}
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };

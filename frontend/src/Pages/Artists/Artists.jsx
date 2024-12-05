@@ -3,6 +3,7 @@ import { getArtistByName } from "../../Services/ArtistsServices";
 import ArtistsCard from "../../Components/ArtistsCards/ArtistsCard"; // Assuming you have a card component for individual artists
 import "./Artists.css"; // The CSS file to style this component
 import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
 
 const Artists = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -68,24 +69,7 @@ const Artists = () => {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="left">
-          <p>
-            En <span className="highlight">Chuchango</span> difundimos y
-            apoyamos los eventos locales para promover la cultura underground
-          </p>
-        </div>
-        <div className="right">
-          <p>
-            Eventos
-            <br />
-            Artistas
-            <br />
-            Comunidad
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
