@@ -48,56 +48,89 @@ body {
 }
 
 /* Artists Section */
-.artists-buttons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.BotonesArtistas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
 }
 
-.artist-button {
-    padding: 10px 20px;
-    background-color: #F788B8;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.artist-button:hover {
-    background-color: #ff99cc;
-    transform: scale(1.1);
-}
-
-/* Event Date */
-.event-date {
-    margin-top: 30px;
-    font-size: 1.2rem;
+.BotonesArtistas button {
+    position: absolute;
     text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Outfit, sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 64px;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
 
-.date-month, .date-day, .date-year {
-    margin-right: 10px;
+.BotonesArtistas button:hover {
+    opacity: 0.8;
+}
+
+.Lwci {
+    left: 9px;
+    top: 10px;
+}
+
+.Masanet {
+    left: 316px;
+    top: 10px;
+}
+
+.Monzoon {
+    left: 482px;
+    top: 10px;
+}
+
+.Dgas {
+    left: 16px;
+    top: 70px;
+}
+
+.Techno {
+    left: 148px;
+    top: 70px;
+}
+
+.Hardgroove {
+    left: 283px;
+    top: 70px;
+}
+
+.HardTechno {
+    left: 423px;
+    top: 70px;
+}
+
+.Tanasoul {
+    left: 149px;
+    top: 10px;
 }
 
 /* Sign Up Button */
 .sign-up-button {
-    margin-top: 40px;
-    padding: 10px 30px;
-    font-size: 1.2rem;
-    background-color: #28a745;
+    background-color: #F788B8;
+    width: 150px;
+    height: 2.7rem;
+    font-weight: 600;
     color: white;
     border: none;
     border-radius: 20px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
 }
 
 .sign-up-button:hover {
-    background-color: #218838;
+    background-color: #ff99cc;
     transform: scale(1.1);
 }
 

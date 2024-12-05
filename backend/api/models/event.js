@@ -13,6 +13,10 @@ const Event = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    image_path: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     timestamps: false,

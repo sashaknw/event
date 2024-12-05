@@ -5,7 +5,7 @@ import "./EventsCard.css";
 const EventCard = ({ event }) => {
   // Parse the date from the database format (YYYY-MM-DD HH:MM:SS)
   const eventDate = new Date(event.date_time); // Converts the string to a Date object
-
+console.log(event)
   // Extract day, month, and year
   const day = eventDate.getDate(); // Get the day of the month
   const month = eventDate.toLocaleString("default", { month: "long" }); // Get the month name in words
@@ -14,20 +14,21 @@ const EventCard = ({ event }) => {
   return (
     <div className="event-card">
       <Link to={`/events/${event.id}`} className="view-details-link">
+        {/* Use the image path from the event object */}
         <img
-          src={event.img || "../assets/Carteles/ex-squeezit.jpg"}
+          src={ event.image_path }
           alt={event.name}
           className="event-image"
         />
       </Link>
-        
-        <h3>{event.name}</h3>
-        <p>{event.location}</p>
 
-        <div className="date">
-          <span className="date-month">{month}</span>
-          <span className="date-day">{day}</span>
-        </div>
+      <h3>{event.name}</h3>
+      <p>{event.location}</p>
+
+      <div className="date">
+        <span className="date-month">{month}</span>
+        <span className="date-day">{day}</span>
+      </div>
       <button className="btn">¡APÚNTATE!</button>
     </div>
   );
