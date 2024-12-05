@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer"; 
+import Footer from "../../Components/Footer/Footer";
 import { Link } from "react-router-dom";
 const Home = () => {
   return (
@@ -17,11 +17,11 @@ const Home = () => {
         </section>
         <section className="content">
           <div className="left">
-            <img
-              src="https://via.placeholder.com/682x645"
-              alt="Portada 1"
-              className="main-image"
-            />
+            <div className="video-container">
+              <video className="video" autoPlay={true} loop muted>
+                <source src="/assets/videos/2M4A9381_6.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
           <div className="right">
             <img
@@ -38,7 +38,7 @@ const Home = () => {
               <div className="button-ver-eventos">
                 <div className="button-ver-eventos-child" />
                 <Link to="/events">
-                <button className="ver-eventos" >VER EVENTOS</button>
+                  <button className="ver-eventos">VER EVENTOS</button>
                 </Link>
               </div>
               <div className="buscar-eveto-y-artista-parent">
@@ -48,6 +48,12 @@ const Home = () => {
                 />
                 {/* aqui falta icono buscar */}
               </div>
+            </div>
+            <div className="image-container">
+              <img
+                src="/assets/artistas/Babylia.jpg"
+                alt="Descripción de la imagen"
+              />
             </div>
           </div>
         </section>
@@ -59,9 +65,8 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      
-        <Footer />
-     
+
+      <Footer />
     </div>
   );
 };
