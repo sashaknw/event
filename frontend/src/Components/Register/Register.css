@@ -1,0 +1,132 @@
+/* Register.css */
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
+}
+
+/* General Popup Background Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content */
+.register-popup-content {
+    background-color: #F788B8;
+    padding: 20px;
+    border-radius: 26px;
+    max-width: 500px;
+    width: 32rem;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.6s ease forwards;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+/* Input Fields */
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border: 1px solid #ccc;
+    border-radius: 26px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.register-button {
+    background-color: black !important;
+    font-weight: 600;
+    color: white;
+    padding: 0.8rem;
+    width: 100%;
+    border: none;
+    border-radius: 26px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 20px;
+}
+
+.register-button:hover {
+    background-color: white !important;
+    color: black;
+    border: 3px solid black;
+}
+
+/* Error message */
+.error-message {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Login link */
+.login-text b {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+.login-text b:hover {
+    text-decoration: underline;
+}
+
+.invalid-input {
+    border: 2px solid black;
+}

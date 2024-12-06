@@ -60,3 +60,69 @@
     color: white;
 
 }
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content,
+.register-popup-content {
+    background-color: #F788B8;
+    padding: 20px;
+    border-radius: 26px;
+    max-width: 500px;
+    width: 32rem;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
+}
+
+.register-popup-content {
+    background-color: #F788B8;
+    padding: 20px;
+    border-radius: 26px;
+    max-width: 500px;
+    width: 32rem;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Popup Content for Access */
+.popup-content {
+    background-color: #F788B8;
+    padding: 20px;
+    border-radius: 26px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 1000;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

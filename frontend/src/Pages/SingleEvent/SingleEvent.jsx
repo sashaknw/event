@@ -27,11 +27,17 @@ const SingleEvent = () => {
   if (loading) return <p>Cargando evento...</p>; // Show loading text while fetching data
   if (!event) return <p>Evento no encontrado</p>; // Show error message if event not found
 
-  // Parse the date from the database format (YYYY-MM-DD HH:MM:SS)
-  const eventDate = new Date(event.date_time); // Converts the string to a Date object
-  const day = eventDate.getDate(); // Get the day of the month
-  const month = eventDate.toLocaleString("default", { month: "long" }); // Get the month name in words
-  const year = eventDate.getFullYear(); // Get the year
+  // Hardcoded list of DJs (add/remove as needed)
+  const djs = [
+    "Lwci",
+    "Masanet",
+    "Monzoon",
+    "DGAS",
+    "Tanasoul",
+    "Techno",
+    "Hardgroove",
+    "Hard Techno",
+  ];
 
   return (
     <div className="single-event-container">
@@ -43,38 +49,45 @@ const SingleEvent = () => {
       {/* Event Poster */}
       <div className="event-poster">
         <img
-          src={event.image_path || "../assets/Carteles/ex-squeezit.jpg"} // Use the event's image path (with fallback)
+          src={event.image_path || "../assets/Carteles/ex-squeezit.jpg"} // Fallback image
           alt={event.name}
           className="poster-image"
         />
       </div>
 
-      {/* Artists Buttons */}
-      <div className="BotonesArtistas">
-        <button className="Lwci">Lwci</button>
-        <button className="Masanet">Masanet</button>
-        <button className="Monzoon">Monzoon</button>
-        <button className="Dgas">DGAS</button>
-        <button className="Techno">Techno</button>
-        <button className="Hardgroove">Hardgroove</button>
-        <button className="HardTechno">Hard Techno</button>
-        <button className="Tanasoul">Tanasoul</button>
+      {/* DJ Buttons */}
+      <div className="djs-buttons-container">
+        {djs.map((dj, index) => (
+          <button key={index} className="dj-button">
+            {dj}
+          </button>
+        ))}
+      </div>
+      <div className="event-description-and-date-container">
+        {/* Event Date */}
+        <div className="event-date">
+          <img
+            src="../../../public/assets/Elementos/date.png"
+            alt="date"
+            className="date-image"
+          />
+        </div>
+
+        {/* Event Description */}
+        <div className="event-description">
+          <p>
+            En esta ocasión y aprovechando que buscamos un evento más íntimo,
+            con entradas más limitadas nos encontraremos una escena cargada de
+            obras, donde artistas de diferentes partes de las islas estaremos
+            colaborando para vivir una experiencia musical a la altura de las
+            anteriores.
+          </p>
+        </div>
       </div>
 
-      {/* Event Date */}
-      <div className="event-date">
-        <img src= "../../../public/assets/Elementos/date.png"></img>
+      <div className="sign-up-button-container">
+        <button className="sign-up-button">¡APÚNTATE!</button>
       </div>
-      <div className="event-description">
-        <p>
-          En esta ocasión y aprovechando que buscamos un evento más íntimo, con
-          entradas más limitadas nos encontraremos una escena cargada de obras,
-          donde artistas de diferentes partes de las islas estaremos colaborando
-          para vivir una experiencia musical a la altura de las anteriores.{" "}
-        </p>
-      </div>
-      {/* Sign Up Button */}
-      <button className="sign-up-button">¡APÚNTATE!</button>
 
       {/* Social Media Icons */}
       <div className="social-media-icons">

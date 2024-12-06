@@ -2,27 +2,39 @@ import React, { useState } from "react";
 import { login } from "../../Services/authService";
 import "./Access.css";
 
-const Access = ({ onAccessSuccess }) => {
+const Access = ({ onAccessSuccess, openRegisterPopup }) => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
+  const [error, setError] = useState(""); // Error state to store the error message
+  const [isShaking, setIsShaking] = useState(false);
+  const [showRegisterText, setShowRegisterText] = useState(true);
+
   const handleLogin = async () => {
     try {
       const response = await login(loginData);
       console.log("Acceso correcto", response);
-      onAccessSuccess(response.data); // Close the popup or handle success
+      onAccessSuccess(response.data);
     } catch (error) {
       console.error("Acceso incorrecto", error);
-      alert("Credenciales incorrectas");
+      setError("¡Ups! Credenciales incorrectas");
+      setIsShaking(true);
+      setShowRegisterText(false);
+
+      // Reset shake effect after animation duration
+      setTimeout(() => setIsShaking(false), 600); // 600ms shake duration
+      setTimeout(() => {
+        setError(""), setShowRegisterText(true);
+      }, 2000);
     }
   };
 
   return (
-    <div className="acess-main-div">
+    <div className={`acess-main-div ${isShaking ? "shake" : ""}`}>
       <h2>Acceso</h2>
-      <br></br>
+      <br />
       <input
         type="email"
         value={loginData.email}
@@ -40,9 +52,15 @@ const Access = ({ onAccessSuccess }) => {
       <button className="entrar-button" onClick={handleLogin}>
         ENTRAR
       </button>
-      <p className="register-text">
-        ¿No tienes cuenta? <b>Regístrate</b>{" "}
-      </p>
+      {/* Display error message if there's one */}
+      {error && <p className="error-message">{error}</p>}
+
+      {/* "Regístrate" text with pointer and underline effect */}
+      {showRegisterText && (
+        <p className="register-text">
+          ¿No tienes cuenta? <b onClick={openRegisterPopup}>Regístrate</b>
+        </p>
+      )}
     </div>
   );
 };

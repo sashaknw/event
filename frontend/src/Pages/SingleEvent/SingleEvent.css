@@ -42,79 +42,68 @@ body {
 }
 
 .poster-image {
-    width: 80%;
+    width: 48%;
+    /* Reduced width of the poster image */
     height: auto;
     border-radius: 26px;
 }
 
-/* Artists Section */
-.BotonesArtistas {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
+/* DJ Buttons Section */
+.djs-buttons-container {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    margin-top: 20px;
+    width: 40%;
+    flex-wrap: wrap;
+    margin-left: 22rem;
+    margin-right: auto;
 }
 
-.BotonesArtistas button {
-    position: absolute;
-    text-align: center;
+.dj-button {
+    background-color: transparent;
     color: white;
-    font-size: 20px;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
     font-family: Outfit, sans-serif;
     font-weight: 600;
-    word-wrap: break-word;
-    background-color: transparent;
-    border: 3px solid white;
-    border-radius: 64px;
-    padding: 10px;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.2s;
 }
 
-.BotonesArtistas button:hover {
+.dj-button:hover {
     opacity: 0.8;
+    transform: scale(1.1);
+}
+.event-description-and-date-container {
+    display: flex;
+    align-items: center;
+    width: 70%;
+   margin-left: 21.7rem;
+   margin-right: auto;
 }
 
-.Lwci {
-    left: 9px;
-    top: 10px;
+.date-image {
+    width: 90%;
+    /* Increased size for the date image */
+    height: auto;
 }
 
-.Masanet {
-    left: 316px;
-    top: 10px;
+/* Event Description */
+.event-description {
+    max-width: 42%;
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+    margin-top: 20px;
+    align-self: start;
 }
-
-.Monzoon {
-    left: 482px;
-    top: 10px;
+.sign-up-button-container {
+    display: flex;
+    justify-content: center;
 }
-
-.Dgas {
-    left: 16px;
-    top: 70px;
-}
-
-.Techno {
-    left: 148px;
-    top: 70px;
-}
-
-.Hardgroove {
-    left: 283px;
-    top: 70px;
-}
-
-.HardTechno {
-    left: 423px;
-    top: 70px;
-}
-
-.Tanasoul {
-    left: 149px;
-    top: 10px;
-}
-
 /* Sign Up Button */
 .sign-up-button {
     background-color: #F788B8;
@@ -127,6 +116,7 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
+    margin-top: 30px;
 }
 
 .sign-up-button:hover {
