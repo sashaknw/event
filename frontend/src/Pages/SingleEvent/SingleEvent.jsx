@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; // To get the event ID from the URL
-import { getOneEvent } from "../../Services/EventsServices"; // Assuming this function exists to fetch event data
+import { useParams } from "react-router-dom";
+import { getOneEvent } from "../../Services/EventsServices";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
-import "./SingleEvent.css"; // Your custom styles
+import "./SingleEvent.css";
 
 const SingleEvent = () => {
-  const { id } = useParams(); // Get event ID from URL
+  const { id } = useParams();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isArtistPopupOpen, setIsArtistPopupOpen] = useState(false);
 
   useEffect(() => {
     const fetchEventData = async () => {
       try {
-        const eventData = await getOneEvent(id); // Fetch event data based on the ID
+        const eventData = await getOneEvent(id);
         setEvent(eventData);
       } catch (error) {
         console.error("Error fetching event data:", error);
@@ -22,49 +23,60 @@ const SingleEvent = () => {
       }
     };
     fetchEventData();
-  }, [id]); // Run effect when ID changes
+  }, [id]);
 
-  if (loading) return <p>Cargando evento...</p>; // Show loading text while fetching data
-  if (!event) return <p>Evento no encontrado</p>; // Show error message if event not found
+  if (loading) return <p>Cargando evento...</p>;
+  if (!event) return <p>Evento no encontrado</p>;
 
-  // Hardcoded list of DJs (add/remove as needed)
+  // Hardcoded DJs
   const djs = [
     "Lwci",
     "Masanet",
     "Monzoon",
     "DGAS",
-    "Tanasoul",
+    "Tanasoul", // We will handle this one differently
     "Techno",
     "Hardgroove",
     "Hard Techno",
   ];
 
+  // Open the artist popup
+  const openArtistPopup = () => {
+    setIsArtistPopupOpen(true);
+  };
+
+  // Close the artist popup
+  const closeArtistPopup = () => {
+    setIsArtistPopupOpen(false);
+  };
+
   return (
     <div className="single-event-container">
       <Header />
 
-      {/* Event Name */}
       <h1 className="event-title">{event.name}</h1>
 
-      {/* Event Poster */}
       <div className="event-poster">
         <img
-          src={event.image_path || "../assets/Carteles/ex-squeezit.jpg"} // Fallback image
+          src={event.image_path || "../assets/Carteles/ex-squeezit.jpg"}
           alt={event.name}
           className="poster-image"
         />
       </div>
 
-      {/* DJ Buttons */}
       <div className="djs-buttons-container">
         {djs.map((dj, index) => (
-          <button key={index} className="dj-button">
+          <button
+            key={index}
+            className="dj-button"
+            onClick={dj === "Tanasoul" ? openArtistPopup : undefined}
+          >
             {dj}
           </button>
         ))}
       </div>
+
       <div className="event-description-and-date-container">
-        {/* Event Date */}
         <div className="event-date">
           <img
             src="../../../public/assets/Elementos/date.png"
@@ -73,7 +85,6 @@ const SingleEvent = () => {
           />
         </div>
 
-        {/* Event Description */}
         <div className="event-description">
           <p>
             En esta ocasión y aprovechando que buscamos un evento más íntimo,
@@ -89,7 +100,6 @@ const SingleEvent = () => {
         <button className="sign-up-button">¡APÚNTATE!</button>
       </div>
 
-      {/* Social Media Icons */}
       <div className="social-media-icons">
         <a
           href={`https://facebook.com/sharer/sharer.php?u=${window.location.href}`}
@@ -108,6 +118,38 @@ const SingleEvent = () => {
       </div>
 
       <Footer />
+
+      {/* Artist Popup */}
+      {isArtistPopupOpen && (
+        <div className="popup-overlay">
+          <div className="artist-popup-content">
+            <button className="close-btn" onClick={closeArtistPopup}>
+              ×
+            </button>
+
+            {/* Artist Background */}
+            <div
+              className="artist-popup-background"
+              
+            >
+              <div className="artist-info">
+                <h3>Tanasoul</h3>
+                <p>
+                  DJ y productor basado en Las Palmas de Gran Canaria. Fundador
+                  del sello Soulsense Records, evento VERTIGO y parte del duo
+                  Bangerlore.
+                </p>
+
+                {/* Genre Buttons */}
+                <div className="genre-buttons">
+                  <button className="genre-button">Hardgroove</button>
+                  <button className="genre-button">Techno</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

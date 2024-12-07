@@ -18,47 +18,6 @@ body {
     padding: 20px;
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-.logo-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-.nav {
-    display: flex;
-    gap: 20px;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn {
-    background-color: #F788B8;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.acceso-artista {
-    font-weight: 600;
-}
-
-.btn:hover {
-    background-color: #ff99cc;
-    transform: scale(1.1);
-}
-
 /* Hero Section */
 .hero-section {
     text-align: center;
@@ -79,8 +38,10 @@ body {
 /* Search Section */
 .search-section {
     display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+    justify-content: flex-end;
+    /* Align the search bar to the right */
+    margin-bottom: 20px;
+    /* Space above the search bar */
 }
 
 .search-input-container {
@@ -93,7 +54,8 @@ body {
     font-size: 16px;
     border-radius: 50px;
     border: 2px solid #ccc;
-    width: 300px;
+    width: 200px;
+    /* Set the width of the search input */
 }
 
 .search-btn {
@@ -116,7 +78,60 @@ body {
     margin-top: 10px;
 }
 
-/* Artist Display */
+.no-results {
+    font-size: 16px;
+    color: #F788B8;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* DJs Section */
+.djs-section {
+    margin-top: 40px;
+}
+
+.djs-cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dj-card {
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    color: white;
+}
+
+.dj-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.dj-info {
+    margin-top: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Artist Display Section */
 .artists-display {
     display: flex;
     gap: 20px;
@@ -148,29 +163,6 @@ body {
     font-size: 16px;
     color: #F788B8;
     margin-bottom: 20px;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.social-icons span {
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
-
-.social-icons span:hover {
-    color: #F788B8;
-    transform: scale(1.1);
-}
-
-/* Empty card for spacing */
-.empty-card {
-    background-color: transparent;
-    width: 250px;
 }
 
 /* Footer */

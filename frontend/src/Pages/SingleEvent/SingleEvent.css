@@ -77,12 +77,13 @@ body {
     opacity: 0.8;
     transform: scale(1.1);
 }
+
 .event-description-and-date-container {
     display: flex;
     align-items: center;
     width: 70%;
-   margin-left: 21.7rem;
-   margin-right: auto;
+    margin-left: 21.7rem;
+    margin-right: auto;
 }
 
 .date-image {
@@ -100,10 +101,12 @@ body {
     margin-top: 20px;
     align-self: start;
 }
+
 .sign-up-button-container {
     display: flex;
     justify-content: center;
 }
+
 /* Sign Up Button */
 .sign-up-button {
     background-color: #F788B8;
@@ -141,4 +144,97 @@ body {
 
 .social-media-icons a:hover {
     color: #F788B8;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Artist Popup Content */
+.artist-popup-content {
+    background-color: transparent;
+    padding: 0;
+    max-width: 450px;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1100;
+}
+
+.artist-popup-background {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url('/assets/DJs/Tanasoul2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    color: white;
+    position: relative;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 26px;
+}
+
+.artist-info {
+    padding: 20px;
+    display: block;
+
+}
+
+.artist-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.artist-info p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.genre-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.genre-button {
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: solid 3px white;
+    border-radius: 26px;
+    cursor: pointer;
+}
+
+.genre-button:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
 }

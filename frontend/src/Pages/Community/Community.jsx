@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Community.css";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
+import Register from "../../Components/Register/Register"; // Import Register component
 
 const Community = () => {
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false); // State to control the Register popup
+
+  // Function to open the Register popup
+  const openRegisterPopup = () => {
+    setIsRegisterOpen(true);
+  };
+
+  // Function to close the Register popup
+  const closeRegisterPopup = () => {
+    setIsRegisterOpen(false);
+  };
+
   return (
     <div className="Community">
       <Header />
@@ -40,11 +53,24 @@ const Community = () => {
             <br />
             promociona tu evento
           </h2>
-          <button className="register-button">REGÍSTRATE</button>
+          <button className="register-button" onClick={openRegisterPopup}>
+            REGÍSTRATE
+          </button>
         </div>
       </main>
+
+      {/* Conditionally render Register popup */}
+      {isRegisterOpen && (
+        <Register
+          onRegisterSuccess={() => {}}
+          openAccessPopup={() => {}}
+          onClose={closeRegisterPopup}
+        />
+      )}
+
       <Footer />
     </div>
   );
 };
+
 export default Community;
