@@ -2,127 +2,126 @@
 
 /* Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .logo-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.3s ease-in-out;
 }
-.logo-button:hover {
-   transform: scale(1.1);
 
+.logo-button:hover .logo-img {
+  content: url("../../../public/assets/Logo/caracolhome.png");
 }
 
 .nav {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-
-
 .acceso-artista {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .btn:hover {
-    background-color: #ff99cc;
-    transform: scale(1.1);
+  background-color: #ff99cc;
+  transform: scale(1.1);
 }
 
 .acceso-artista {
-    position: absolute;
-    font-weight: 600;
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 14rem;
-    height: 2.5rem;
+  position: absolute;
+  font-weight: 600;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 14rem;
+  height: 2.5rem;
 }
 
-.groupArtista{
-    width:100%;
-    position: relative;
-    height: 3.20rem;
-    text-align: center;
-    font-size: 1.25rem;
-    color: white;
-
+.groupArtista {
+  width: 200px;
+  position: relative;
+  height: 3.2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: white;
+  margin-right: -320px;
 }
 
 .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .popup-content,
 .register-popup-content {
-    background-color: #F788B8;
-    padding: 20px;
-    border-radius: 26px;
-    max-width: 500px;
-    width: 32rem;
-    z-index: 1100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  background-color: #f788b8;
+  padding: 20px;
+  border-radius: 26px;
+  max-width: 500px;
+  width: 32rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 3rem;
-    cursor: pointer;
-    color: white;
-    z-index: 1100;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: white;
+  z-index: 1100;
 }
 
 .register-popup-content {
-    background-color: #F788B8;
-    padding: 20px;
-    border-radius: 26px;
-    max-width: 500px;
-    width: 32rem;
-    z-index: 1100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  background-color: #f788b8;
+  padding: 20px;
+  border-radius: 26px;
+  max-width: 500px;
+  width: 32rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 /* Popup Content for Access */
 .popup-content {
-    background-color: #F788B8;
-    padding: 20px;
-    border-radius: 26px;
-    max-width: 400px;
-    width: 100%;
-    z-index: 1000;
-    height: 24rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #f788b8;
+  padding: 20px;
+  border-radius: 26px;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1000;
+  height: 24rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

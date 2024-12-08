@@ -69,60 +69,59 @@ const Home = () => {
               alt="Palette"
               className="palette-image"
             />
-            <h2>EVENTOS DE MÚSICA ELECTRÓNICA EN LAS PALMAS</h2>
+            <h2 class="h2desc">EVENTOS DE MÚSICA ELECTRÓNICA EN LAS PALMAS</h2>
             <p className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               vitae ante vel enim placerat laoreet. Aliquam erat volutpat.
             </p>
+
+            <div className="seccion-ver-eventos-y-buscar">
+              <div className="button-ver-eventos">
+                <div className="button-ver-eventos-child" />
+                <Link to="/events">
+                  <button className="ver-eventos">VER EVENTOS</button>
+                </Link>
+              </div>
+
+              {/* Search Section */}
+              <section className="search-section">
+                <div className="buscar-eveto-y-artista-parent">
+                  <input
+                    className="buscar-eveto-y-artista"
+                    placeholder="Busca eventos y artistas"
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <button className="btn-buscar" onClick={handleSearch}>
+                    Buscar
+                  </button>
+
+                  {loading && <p className="loading-text">Cargando...</p>}
+                  {searchCompleted && events.length === 0 && (
+                    <p className="no-results">No se encontraron eventos.</p>
+                  )}
+                </div>
+              </section>
+            </div>
+
+            {/* Render the event cards */}
+            <div className="event-cards-container">
+              {events.length > 0 && !loading
+                ? events.map((event) => (
+                    <EventCard key={event.id} event={event} /> // Display each event as a card
+                  ))
+                : null}{" "}
+              {/* Removed the "No events to display" text */}
+            </div>
+            <div className="image-container">
+              <img
+                src="/assets/artistas/Babylia.jpg"
+                alt="Descripción de la imagen"
+              />
+            </div>
           </div>
         </section>
-
-        <div className="seccion-ver-eventos-y-buscar">
-          <div className="button-ver-eventos">
-            <div className="button-ver-eventos-child" />
-            <Link to="/events">
-              <button className="ver-eventos">VER EVENTOS</button>
-            </Link>
-          </div>
-
-          {/* Search Section */}
-          <section className="search-section">
-            <div className="buscar-eveto-y-artista-parent">
-              <input
-                className="buscar-eveto-y-artista"
-                placeholder="Busca eventos y artistas"
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <button className="btn-buscar" onClick={handleSearch}>
-                Buscar
-              </button>
-
-              {loading && <p className="loading-text">Cargando...</p>}
-              {searchCompleted && events.length === 0 && (
-                <p className="no-results">No se encontraron eventos.</p>
-              )}
-            </div>
-          </section>
-        </div>
-
-        {/* Render the event cards */}
-        <div className="event-cards-container">
-          {events.length > 0 && !loading
-            ? events.map((event) => (
-                <EventCard key={event.id} event={event} /> // Display each event as a card
-              ))
-            : null}{" "}
-          {/* Removed the "No events to display" text */}
-        </div>
-
-        <div className="image-container">
-          <img
-            src="/assets/artistas/Babylia.jpg"
-            alt="Descripción de la imagen"
-          />
-        </div>
 
         <section className="cta">
           <h2>Crea tu perfil de artista</h2>
