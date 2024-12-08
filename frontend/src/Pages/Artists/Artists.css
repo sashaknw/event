@@ -88,6 +88,10 @@ body {
 /* DJs Section */
 .djs-section {
     margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .djs-cards-container {
@@ -104,11 +108,17 @@ body {
     width: 250px;
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dj-card img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
+    height: 300px;
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
@@ -129,6 +139,7 @@ body {
 
 .social-icons img:hover {
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 /* Artist Display Section */

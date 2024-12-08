@@ -19,6 +19,10 @@ const djData = [
     name: "DAMASO",
     img: "/assets/artistas/Damaso.jpg",
   },
+  {
+    name: "ASTRO BABE",
+    img: "/assets/artistas/astro_babe.jpg",
+  },
 ];
 
 const Artists = () => {
@@ -86,6 +90,7 @@ const Artists = () => {
                 <img src={dj.img} alt={dj.name} />
                 <div className="dj-info">
                   <h3>{dj.name}</h3>
+                  <p className="dj-description">{dj.description}</p>
                   <div className="social-icons">
                     <img
                       className="small_icon"

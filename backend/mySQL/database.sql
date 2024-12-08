@@ -15,11 +15,35 @@ CREATE TABLE `Artists` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `image_path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `Artists` WRITE;
-INSERT INTO `Artists` VALUES (1,'Tanasoul','DJ y productor basado en Las Palmas de Gran Canaria. Fundador del sello SoulsenseRecords, evento VERTIGO y parte del duo Bangerlore.'),(2,'LWCI','DJ de raíces argentinas basada en Las Palmas de Gran Canaria, mezcla industrial techno, tekno y lo que le pida el alma, resultando en un sonido potente y una energía imparable.'),(3,'Damaso','DJ y parte de la Asociación Cultural el Baladero y eventos como Blasfemia BDSM Fest. Mezcla estilos como hardcore gabber, el techno industrial y frenchcore. Todo con un estilo intrépido.'),(4,'Shaydy','DJ y diseñadora de moda panameña. Trae sonidos percusivos con melodías seductoras, ritmos polirrítmicos en géneros como el breakbeat, ghettotech o footwork.'),(5,'Hunny Bunny','Self-defined melómana inspirada en el underground de los hubs de electrónica de toda Europa, mezcla house, ghetto y electro. Crea sesiones raw y gamberras pero con su toque de finura.'),(6,'Baby Lia','DJ, productora y diseñadora. Saca su inspiración del movimiento ravero de la isla y lo refleja en todo su arte.'),(7,'Ninf.A','Multidisciplinar it girl de la vanguardia islenia. Su sonido combina el folklore con el rollo oscuro y cargado de fuerza.'),(8,'Marisol García','Productora, DJ y promotora establecida en la isla gracias a los eventos como Asymetric o PULSAR. De manera consistente sus sets incluyen techno, acid con toques del sonido actual.'),(9,'astro babe','DJ colaboradora en el evento VERTIGO. Explora hard techno e industrial para conseguir un vibe nostálgico, oscuro, pero con ocasionales melodías dulces.'),(10,'DGAS','DJ y fundador del evento Free2Feel. Marca su sonido con géneros como el hard groove, techno y hard techno.'),(11,'kli_kiti','Uno de los pilares del sonido isleño actual a través de la Asociación Cultural el Baladero. DJ con un estilo dinámico, experimentado y con sonidos del breakbeat, ghetto y otras mil cositas.'),(12,'Apoklope','DJ de hard groove e industrial. Sets con consistencia, potencia y una energía aporreante en el mejor sentido de la palabra.'),(13,'Víctor Juliá',''),(14,'WeedFyx','DJ con sonidazo dinámico de ghettotech y hardgroove. Parte del colectivo blacksheepss y la Asociación Cultural el Baladero.'),(15,'Ace2Rave','DJ fiel del hard industrial techno. Mezcla la oscuridad con warehouse y el hardbass ruso.'),(16,'Funke','DJ que contagia con sus irresistibles beats de house y funk. Sus sets enérgicos combinan ritmos llenos de groove y bajos profundos, creando un rollo positivo y vibrante en la pista.'),(17,'Richarson','DJ de techno y hard techno, lleva al límite la pista con sus pulsos agresivos y energía imparable.'),(18,'Woodhands','DJ y uno de los pilares del movimiento Pub Pelukas. Digital o vinilo, breakbeat o grime, siempre tropical.'),(19,'Felix Strizzi','DJ y parte del duo Bangerlore. Representante de sonidos dulzones y muy bailables a través del trance, groovy, y altos BPMs.'),(20,'Wyvan Cat','Desde el house al techno, Wyvan Cat genera un ambientazo en la pista con sus sets intencionales y bailables.');
+INSERT INTO Artists (`id`, `name`, `description`, `image_path`) VALUES 
+(1, 'Tanasoul', 'DJ y productor basado en Las Palmas de Gran Canaria. Fundador del sello SoulsenseRecords, evento VERTIGO y parte del duo Bangerlore.', '../assets/DJs/Tanasoul2.jpg'),
+(2, 'LWCI', 'DJ de raíces argentinas basada en Las Palmas de Gran Canaria, mezcla industrial techno, tekno y lo que le pida el alma, resultando en un sonido potente y una energía imparable.', NULL),
+(3, 'Damaso', 'DJ y parte de la Asociación Cultural el Baladero y eventos como Blasfemia BDSM Fest. Mezcla estilos como hardcore gabber, el techno industrial y frenchcore. Todo con un estilo intrépido.', '../assets/artistas/Damaso.jpg'),
+(4, 'Shaydy', 'DJ y diseñadora de moda panameña. Trae sonidos percusivos con melodías seductoras, ritmos polirrítmicos en géneros como el breakbeat, ghettotech o footwork.', NULL),
+(5, 'Hunny Bunny', 'Self-defined melómana inspirada en el underground de los hubs de electrónica de toda Europa, mezcla house, ghetto y electro. Crea sesiones raw y gamberras pero con su toque de finura.', NULL),
+(6, 'Baby Lia', 'DJ, productora y diseñadora. Saca su inspiración del movimiento ravero de la isla y lo refleja en todo su arte.', NULL),
+(7, 'Ninf.A', 'Multidisciplinar it girl de la vanguardia islenia. Su sonido combina el folklore con el rollo oscuro y cargado de fuerza.', NULL),
+(8, 'Marisol García', 'Productora, DJ y promotora establecida en la isla gracias a los eventos como Asymetric o PULSAR. De manera consistente sus sets incluyen techno, acid con toques del sonido actual.', NULL),
+(9, 'astro babe', 'DJ colaboradora en el evento VERTIGO. Explora hard techno e industrial para conseguir un vibe nostálgico, oscuro, pero con ocasionales melodías dulces.', '../assets/artistas/astro_babe.JPG'),
+(10, 'DGAS', 'DJ y fundador del evento Free2Feel. Marca su sonido con géneros como el hard groove, techno y hard techno.', NULL),
+(11, 'kli_kiti', 'Uno de los pilares del sonido isleño actual a través de la Asociación Cultural el Baladero. DJ con un estilo dinámico, experimentado y con sonidos del breakbeat, ghetto y otras mil cositas.', NULL),
+(12, 'Apoklope', 'DJ de hard groove e industrial. Sets con consistencia, potencia y una energía aporreante en el mejor sentido de la palabra.', NULL),
+(13, 'Víctor Juliá', '', NULL),
+(14, 'WeedFyx', 'DJ con sonidazo dinámico de ghettotech y hardgroove. Parte del colectivo blacksheepss y la Asociación Cultural el Baladero.', NULL),
+(15, 'Ace2Rave', 'DJ fiel del hard industrial techno. Mezcla la oscuridad con warehouse y el hardbass ruso.', NULL),
+(16, 'Funke', 'DJ que contagia con sus irresistibles beats de house y funk. Sus sets enérgicos combinan ritmos llenos de groove y bajos profundos, creando un rollo positivo y vibrante en la pista.', NULL),
+(17, 'Richarson', 'DJ de techno y hard techno, lleva al límite la pista con sus pulsos agresivos y energía imparable.', NULL),
+(18, 'Woodhands', 'DJ y uno de los pilares del movimiento Pub Pelukas. Digital o vinilo, breakbeat o grime, siempre tropical.', NULL),
+(19, 'Felix Strizzi', 'DJ y parte del duo Bangerlore. Representante de sonidos dulzones y muy bailables a través del trance, groovy, y altos BPMs.', NULL),
+(20, 'Wyvan Cat', 'Desde el house al techno, Wyvan Cat genera un ambientazo en la pista con sus sets intencionales y bailables.', NULL);
+
+
+
 UNLOCK TABLES;
 
 CREATE TABLE `ArtistStyle` (

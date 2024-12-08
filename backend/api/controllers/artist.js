@@ -91,6 +91,7 @@ async function getArtistByName(req, res) {
           [Op.like]: `%${artistName}%`,
         },
       },
+      attributes: ['name', 'description', 'image_path'],
     });
     if (artist.length > 0) {
       return res.status(200).json(artist);

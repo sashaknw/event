@@ -12,7 +12,7 @@ const ArtistProfilePopup = ({ artist, onClose }) => {
           X
         </button>
         <h3>{artist.name}</h3>
-        <img src={artist.image} alt={artist.name} className="artist-image" />
+        <img src={artist.image_path} alt={artist.name} className="artist-image" />
         <p>{artist.description}</p>
       </div>
     </div>

@@ -32,7 +32,7 @@ const ArtistProfilePopup = ({ eventId, closePopup }) => {
         <button onClick={closePopup}>Close</button>
         <h3>{artist.name}</h3>
         <p>{artist.description}</p>
-        <img src={artist.image} alt={artist.name} />
+        <img src={artist.image_path} alt={artist.name} />
       </div>
     </div>
   );

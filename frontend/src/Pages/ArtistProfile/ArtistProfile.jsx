@@ -30,7 +30,7 @@ const ArtistProfile = () => {
     <div>
       <h2>{artist.name}</h2>
       <p>{artist.description}</p>
-      
+      <img src={artist.image_path} alt={artist.name} />
     </div>
   );
 };
