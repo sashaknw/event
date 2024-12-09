@@ -1,21 +1,21 @@
 /* Access.css */
 
 /* Close Button */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
+.close-btn-access { 
+  position: absolute ;
+  top: 5px ;
+  right: 15px ;
+  background: transparent ;
   border: none;
   font-size: 3rem;
-  cursor: pointer;
-  color: white;
-  z-index: 1100;
+  cursor: pointer ;
+  color: white ;
+  z-index: 1100 ;
 }
 
 /* General Popup Background Overlay */
-.popup-overlay {
-  position: fixed;
+.popup-overlay-access {
+  position: fixed ;
   top: 0;
   left: 0;
   right: 0;
@@ -28,17 +28,18 @@
 }
 
 /* Popup Content */
-.popup-content {
+.popup-content-access {
   background-color: #F788B8;
-  padding: 20px;
-  border-radius: 26px;
-  max-width: 400px;
-  width: 100%;
-  z-index: 1000;
-  height: 24rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px ;
+  border-radius: 26px ;
+  max-width: 400px ;
+  width: 100% ;
+  z-index: 1000 ;
+  height: 24rem ;
+  display: flex ;
+  flex-direction: column ;
+  align-items: center ;
+  position: relative;
 }
 
 /* Shake Animation */
@@ -69,20 +70,20 @@
 }
 
 h2 {
-  text-align: center;
-  margin-top: 0;
-  font-size: 4rem;
+  text-align: center !important;
+  margin-top: 0 !important;
+  font-size: 3.7rem !important;
 }
 
 /* Input Fields */
-input {
-  width: 100%;
-  padding: 0.8rem;
-  margin: 0.8rem 0;
-  border: 1px solid #ccc;
-  border-radius: 26px;
-  font-size: 1rem;
-  box-sizing: border-box;
+.input-access {
+  width: 100% ;
+  padding: 0.8rem !important;
+  margin: 0.8rem 0 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 26px !important;
+  font-size: 1rem !important;
+  box-sizing: border-box !important;
 }
 
 .entrar-button {

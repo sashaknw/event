@@ -24,6 +24,8 @@ body {
   align-items: center;
 }
 
+
+
 .nav {
   display: flex;
   gap: 20px;
@@ -91,7 +93,7 @@ body {
 }
 
 .right h2 {
-  font-size: 24px;
+  font-size: 24px !important;
   font-weight: bold;
   margin-bottom: 20px;
   text-align: left;
@@ -113,8 +115,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
-  margin-top: 80px;
+  margin-top: 50px;
 }
+
+.button-ver-eventos {
+  margin-top: -20px;
+}
+
+
+
 .search-section {
   display: flex;
   justify-content: flex-end;
@@ -128,6 +137,7 @@ body {
   margin-bottom: 20px;
   align-items: center;
 }
+
 
 .btn-buscar,
 .clear-btn {
@@ -168,22 +178,18 @@ body {
 .ver-eventos {
   font-weight: 600;
   width: 150px;
-  /* Fixed width for the button */
   height: 3.188rem;
   border-radius: 64px;
-  background-color: #000;
+  background-color: #F788B8;
   color: white;
-  border: white 3px solid;
   padding: 0 20px;
   cursor: pointer;
-  white-space: nowrap;
+  
   /* Ensure text doesn't wrap */
 }
 
 .ver-eventos:hover {
-  background-color: #f788b8;
-  border: none;
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* CTA Section */

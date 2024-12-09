@@ -1,20 +1,20 @@
 /* Register.css */
 
 /* Close Button */
-.close-btn {
+.close-register {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 20px;
     background: transparent;
     border: none;
-    font-size: 3rem;
+    font-size: 1.8rem;
     cursor: pointer;
     color: white;
     z-index: 1100;
 }
 
 /* General Popup Background Overlay */
-.popup-overlay {
+.popup-overlay-register {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@
 }
 
 /* Popup Content */
-.register-popup-content {
+.popup-content-register {
     background-color: #F788B8;
     padding: 20px;
     border-radius: 26px;
@@ -68,10 +68,12 @@
     animation: shake 0.6s ease forwards;
 }
 
-h2 {
+.register-title {
     text-align: center;
     margin-top: 0;
     font-size: 3rem;
+    font-weight: 600;
+    
 }
 
 /* Input Fields */

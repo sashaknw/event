@@ -1,28 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Access from "../Access/Access";
 import Register from "../Register/Register";
 import "./Header.css"; // Import the necessary CSS
 
 const Header = () => {
-  const [isAccessOpen, setAccessOpen] = useState(false); // State to control popup visibility
-  const [isRegisterOpen, setRegisterOpen] = useState(false); // State to control popup visibility
-  const [isPageBlurred, setPageBlurred] = useState(false); // State to apply blur effect
+  const [isAccessOpen, setAccessOpen] = useState(false);
+  const [isRegisterOpen, setRegisterOpen] = useState(false);
+  const [isPageBlurred, setPageBlurred] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check if token exists in local storage to determine login status
+    const token = localStorage.getItem("authToken");
+    setIsLoggedIn(!!token); // Set true if token exists, false otherwise
+  }, []);
 
   const handleAccessButtonClick = () => {
-    setAccessOpen(true); // Open the login popup
-    setPageBlurred(true); // Apply the blur effect
+    setAccessOpen(true);
+    setPageBlurred(true);
   };
 
   const handleRegisterButtonClick = () => {
-    setRegisterOpen(true); // Open the registration popup
-    setPageBlurred(true); // Apply the blur effect
+    setRegisterOpen(true);
+    setPageBlurred(true);
   };
 
   const handleClosePopup = () => {
-    setAccessOpen(false); // Close the login popup
-    setRegisterOpen(false); // Close the registration popup
-    setPageBlurred(false); // Remove the blur effect
+    setAccessOpen(false);
+    setRegisterOpen(false);
+    setPageBlurred(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("authRole");
+    setIsLoggedIn(false); // Update state to reflect logout
   };
 
   return (
@@ -44,29 +57,37 @@ const Header = () => {
         <Link to="/artists">ARTISTAS</Link>
         <Link to="/community">COMUNIDAD</Link>
 
-        {/* Access Artist Button */}
+        {/* Access or Logout Button */}
         <div className="groupArtista">
           <div className="groupAccesoArtista">
-            <button
-              className="acceso-artista"
-              onClick={handleAccessButtonClick}
-            >
-              ACCESO ARTISTA
-            </button>
+            {isLoggedIn ? (
+              <button className="acceso-artista" onClick={handleLogout}>
+                CERRAR SESIÓN
+              </button>
+            ) : (
+              <button
+                className="acceso-artista"
+                onClick={handleAccessButtonClick}
+              >
+                ACCESO ARTISTA
+              </button>
+            )}
           </div>
         </div>
       </nav>
 
       {/* Access Popup */}
       {isAccessOpen && !isRegisterOpen && (
-        <div className="popup-overlay">
-          <div className="popup-content">
-            {/* Close button inside popup content */}
-            <button className="close-btn" onClick={handleClosePopup}>
+        <div className="popup-overlay-access">
+          <div className="popup-content-access">
+            <button className="close-btn-access" onClick={handleClosePopup}>
               ×
             </button>
             <Access
-              onAccessSuccess={handleClosePopup}
+              onAccessSuccess={() => {
+                handleClosePopup();
+                setIsLoggedIn(true); // Update login status after successful login
+              }}
               openRegisterPopup={() => setRegisterOpen(true)}
             />
           </div>
@@ -77,7 +98,6 @@ const Header = () => {
       {isRegisterOpen && (
         <div className="popup-overlay">
           <div className="register-popup-content">
-            {/* Close button inside popup content */}
             <button className="close-btn" onClick={handleClosePopup}>
               ×
             </button>

@@ -94,7 +94,7 @@ const Register = ({ onRegisterSuccess, openAccessPopup, onClose }) => {
     <div
       className={`register-main-div ${isShaking ? "shake" : ""}`} // Apply shake class if shaking is true
     >
-      <h2>Crea tu perfil de artista</h2>
+      <p className="register-title">Crea tu perfil de artista</p>
       <input
         type="text"
         name="artistName"
@@ -146,7 +146,7 @@ const Register = ({ onRegisterSuccess, openAccessPopup, onClose }) => {
 
       {/* The Close Button should only be rendered once */}
       <button className="close-btn" onClick={onClose}>
-        ×
+        
       </button>
     </div>
   );

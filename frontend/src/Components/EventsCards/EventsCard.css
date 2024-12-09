@@ -2,78 +2,108 @@
 
 /* Event Card */
 .event-card {
-    background-color: #1a1a1a;
+    background-color: #1f1f1f;
     border-radius: 26px;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     max-width: 370px;
     width: 100%;
     box-sizing: border-box;
     /* Ensure padding doesn't exceed max-width */
     margin-bottom: 40px;
     /* Give some space below each card */
+    transition: transform 0.3s ease-in-out;
+    position: relative;
 }
 
 /* Event Image */
-.event-card .event-image {
-    border-radius: 20px;
-    width: 100%;
-    margin-bottom: 20px;
+
+.event-image {
+    display: block;
+    margin: 0 auto;
+    /* Centers the image horizontally */
+    border-radius: 26px;
+    margin-bottom: 15px;
     object-fit: cover;
-    /* Ensures the image covers the card without distortion */
-    height: 250px;
-    /* Fixed height for images */
+    width: 318px;
+    /* Ensures a small space on the sides */
+    height: 410px;
+    /* Maintains aspect ratio */
 }
 
 /* Event Title */
 .event-card h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        margin-top: 0px;
+        text-align: left;
 }
 
-/* Event Location */
-.event-card .location {
-    font-size: 16px;
-    color: #F788B8;
-    margin-bottom: 20px;
+
+.date {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between ;
+    gap: 5px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 /* Date Section */
 .event-card .date {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     gap: 5px;
     margin-bottom: 20px;
+    
 }
+
 
 .event-card .date-month {
     font-size: 24px;
     font-weight: 600;
     text-transform: capitalize;
     color: white;
+    margin-top: -11px;
 }
 
+.date-year {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: white;
+    margin-top: -11px;
+    text-align: left;
+
+}
 .event-card .date-day {
-    font-size: 64px;
+    font-size:104px;
     font-weight: 600;
     color: white;
+    margin-top: -13px;
+    margin-right: 15px;
 }
 
 /* Button */
-.event-card .btn {
-    background-color: #F788B8;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-weight: 600;
-    cursor: pointer;
+ .btn-apuntate {
+        background-color: #F788B8;
+            position: absolute;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 13px 43px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: -95px;
 }
 
-.event-card .btn:hover {
-    background-color: #ff99cc;
+ .btn-apuntate:hover {
+    background-color: white;
+    border: solid 3px black;
+    color: black;
 }
 
 /* View Details Link */
@@ -85,6 +115,33 @@
     text-decoration: none;
 }
 
-.event-card .view-details-link:hover {
-    text-decoration: underline;
+
+.event-card:hover {
+transform: scale(1.07);
+    z-index: 10;
+    background-color: #F788B8;
+    /* Pink background */
+    color: white;
+    /* White text for all elements */
 }
+.event-card:hover h3,
+.event-card:hover .date .date-month,
+.event-card:hover .date .date-day {
+    color: white;
+    /* Ensures all text turns white */
+}
+
+.event-card:hover .btn-apuntate {
+    background-color: black;
+    color: white;
+}
+
+
+h3.tituloEvento {
+    font-family: Syne Tactile;
+    color: #F788B8;
+    font-size: 40px;
+    font-style: light;
+    font-weight: 100;
+}
+

@@ -35,7 +35,7 @@ const Events = () => {
       <main>
         <section className="title-section">
           <h1>Eventos en la isla</h1>
-          <p className="subtitle">No te los pierdas</p>
+          <p className="subtitle-events">No te los pierdas</p>
         </section>
 
         {/* Cards Section */}

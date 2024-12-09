@@ -97,7 +97,7 @@ const Artists = () => {
       <main>
         <section className="hero-section">
           <h1 className="title-artistas">Artistas de la isla</h1>
-          <span className="conocelos">Conócelos</span>
+          <span className="conocelos">Conócel@s</span>
         </section>
 
         <section className="search-section">
@@ -181,12 +181,12 @@ const Artists = () => {
                     />
                     <img
                       className="small_icon"
-                      src="/assets/RRSS/soundcloud.svg"
+                      src="/assets/RRSS/soundcloud2.png"
                       alt="soundcloud"
                     />
                     <img
                       className="small_icon"
-                      src="/assets/RRSS/Instagram.svg"
+                      src="/assets/RRSS/instagram2.png"
                       alt="instagram"
                     />
                   </div>

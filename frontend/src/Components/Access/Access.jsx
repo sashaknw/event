@@ -42,12 +42,14 @@ localStorage.setItem("authRole", role);
       <h2>Acceso</h2>
       <br />
       <input
+        className="input-access"
         type="email"
         value={loginData.email}
         onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
         placeholder="Email"
       />
       <input
+        className="input-access"
         type="password"
         value={loginData.password}
         onChange={(e) =>

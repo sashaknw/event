@@ -18,16 +18,16 @@ const EventCard = ({ event }) => {
         {/* Use the image path from the event object */}
         <img src={event.image_path} alt={event.name} className="event-image" />
       </Link>
-      <h3>{event.name}</h3>
-      <p>{event.location || "Location not specified"}</p>{" "}
+      <h3 className="tituloEvento">{event.name}</h3>
       {/* Add a fallback for missing location */}
       <div className="date">
         <span className="date-month">{month}</span>
         <span className="date-day">{day}</span>
-        <span className="date-year">{year}</span>{" "}
+        
         {/* Optionally display the year */}
       </div>
-      <button className="btn">¡APÚNTATE!</button>
+      
+      <button className="btn-apuntate">¡APÚNTATE!</button>
     </div>
   );
 };

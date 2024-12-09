@@ -12,37 +12,86 @@
     /* Ensure it is above other content */
 }
 
-.popup-content {
-    background-color: white;
+.popup-content-edit {
+    background-color: #F788B8;
     padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10000;
-    /* Ensure content is above the overlay */
+    border-radius: 26px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 1000;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
-.popup-content form {
+.popup-content-edit form {
     display: flex;
     flex-direction: column;
 }
 
-.popup-content input,
-.popup-content textarea {
+.form-edit {
+    position: relative;
+    display: flex;
+} 
+.title-edit {
+    font-size: 3rem;
     margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-.close-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.label-edit {
+    font-size: 1.1rem;
+    margin-bottom: 5px !important;
+    margin-top: 0px !important;
 }
-label {
-    margin-right: auto;
+
+.input-edit {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.textarea-edit {
+    height: 100px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.save-btn-edit {
+    background-color: black;
+        font-weight: 600;
+        color: white;
+        padding: 0.8rem;
+        width: 100%;
+        border: none;
+        border-radius: 26px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
+
+.save-btn-edit:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
+
+
+.close-btn-edit {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1100;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.submit-edit {
+    border-radius: 15px;
 }

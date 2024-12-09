@@ -77,8 +77,7 @@ const Home = () => {
             />
             <h2 className="h2desc">EVENTOS DE MÚSICA ELECTRÓNICA EN LAS PALMAS</h2>
             <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              vitae ante vel enim placerat laoreet. Aliquam erat volutpat.
+              Conéctate a nuestra comunidad, encuentra DJs locales, infórmate de todos las movidas y mucho más
             </p>
 
             <div className="seccion-ver-eventos-y-buscar">
@@ -134,7 +133,7 @@ const Home = () => {
 
         <section className="cta">
           <h2>Crea tu perfil de artista</h2>
-          <p>Promociona tu evento</p>
+          <p>Promociona tu arte</p>
           <button className="btn" onClick={openRegisterPopup}>
             <b>REGÍSTRATE</b>
           </button>
@@ -143,12 +142,13 @@ const Home = () => {
 
       {/* Register Popup */}
       {isRegisterPopupOpen && (
-        <div className="popup-overlay">
-          <div className="popup-content">
+        <div className="popup-overlay-register">
+          <div className="popup-content-register">
             <Register
               onRegisterSuccess={() => {}}
               onClose={closeRegisterPopup}
             />
+            <button className="close-register" onClick={closeRegisterPopup}> x </button>
           </div>
         </div>
       )}

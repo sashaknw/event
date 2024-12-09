@@ -60,12 +60,15 @@ const EditArtistProfile = ({ artist, onClose }) => {
 
   return (
     <div className="popup" onClick={handlePopupClick}>
-      <div className="popup-content">
-        <h2>Edita tu perfil</h2>
+      <div className="popup-content-edit">
+        <p className="title-edit">Edita tu perfil</p>
         {error && <p className="error">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Nombre</label>
+        <form className="form-edit" onSubmit={handleSubmit}>
+          <label className="label-edit" htmlFor="name">
+            Nombre
+          </label>
           <input
+          className="input-edit"
             type="text"
             id="name"
             name="name"
@@ -73,16 +76,22 @@ const EditArtistProfile = ({ artist, onClose }) => {
             onChange={handleInputChange}
           />
 
-          <label htmlFor="description">Bio</label>
+          <label className="label-edit" htmlFor="description">
+            Bio
+          </label>
           <textarea
+            className="textarea-edit"
             id="description"
             name="description"
             value={artistData.description}
             onChange={handleInputChange}
           />
 
-          <label htmlFor="image_path">Foto</label>
+          <label className="label-edit" htmlFor="image_path">
+            Foto
+          </label>
           <input
+          className="input-edit"
             type="file"
             id="image_path"
             name="image_path"
@@ -90,10 +99,10 @@ const EditArtistProfile = ({ artist, onClose }) => {
             onChange={handleInputChange}
           />
 
-          <button type="submit">Guardar cambios</button>
+          <button className="save-btn-edit" type="submit">Guardar cambios</button>
         </form>
-        <button className="close-btn" onClick={onClose}>
-          X
+        <button className="close-btn-edit" onClick={onClose}>
+          x
         </button>
       </div>
     </div>
