@@ -20,16 +20,17 @@ CREATE TABLE `Artists` (
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `Artists` WRITE;
-INSERT INTO Artists (`id`, `name`, `description`, `image_path`) VALUES 
+
+INSERT INTO `Artists` (`id`, `name`, `description`, `image_path`) VALUES 
 (1, 'Tanasoul', 'DJ y productor basado en Las Palmas de Gran Canaria. Fundador del sello SoulsenseRecords, evento VERTIGO y parte del duo Bangerlore.', '../assets/DJs/Tanasoul2.jpg'),
 (2, 'LWCI', 'DJ de raíces argentinas basada en Las Palmas de Gran Canaria, mezcla industrial techno, tekno y lo que le pida el alma, resultando en un sonido potente y una energía imparable.', NULL),
 (3, 'Damaso', 'DJ y parte de la Asociación Cultural el Baladero y eventos como Blasfemia BDSM Fest. Mezcla estilos como hardcore gabber, el techno industrial y frenchcore. Todo con un estilo intrépido.', '../assets/artistas/Damaso.jpg'),
 (4, 'Shaydy', 'DJ y diseñadora de moda panameña. Trae sonidos percusivos con melodías seductoras, ritmos polirrítmicos en géneros como el breakbeat, ghettotech o footwork.', NULL),
 (5, 'Hunny Bunny', 'Self-defined melómana inspirada en el underground de los hubs de electrónica de toda Europa, mezcla house, ghetto y electro. Crea sesiones raw y gamberras pero con su toque de finura.', NULL),
-(6, 'Baby Lia', 'DJ, productora y diseñadora. Saca su inspiración del movimiento ravero de la isla y lo refleja en todo su arte.', NULL),
+(6, 'Baby Lia', 'DJ, productora y diseñadora. Saca su inspiración del movimiento ravero de la isla y lo refleja en todo su arte.', '../assets/artistas/Babylia.jpg'),
 (7, 'Ninf.A', 'Multidisciplinar it girl de la vanguardia islenia. Su sonido combina el folklore con el rollo oscuro y cargado de fuerza.', NULL),
 (8, 'Marisol García', 'Productora, DJ y promotora establecida en la isla gracias a los eventos como Asymetric o PULSAR. De manera consistente sus sets incluyen techno, acid con toques del sonido actual.', NULL),
-(9, 'astro babe', 'DJ colaboradora en el evento VERTIGO. Explora hard techno e industrial para conseguir un vibe nostálgico, oscuro, pero con ocasionales melodías dulces.', '../assets/artistas/astro_babe.JPG'),
+(9, 'astro babe', 'DJ colaboradora en el evento VERTIGO. Explora hard techno e industrial para conseguir un vibe nostálgico, oscuro, pero con ocasionales melodías dulces.', '../assets/artistas/astro_babe.jpg'),
 (10, 'DGAS', 'DJ y fundador del evento Free2Feel. Marca su sonido con géneros como el hard groove, techno y hard techno.', NULL),
 (11, 'kli_kiti', 'Uno de los pilares del sonido isleño actual a través de la Asociación Cultural el Baladero. DJ con un estilo dinámico, experimentado y con sonidos del breakbeat, ghetto y otras mil cositas.', NULL),
 (12, 'Apoklope', 'DJ de hard groove e industrial. Sets con consistencia, potencia y una energía aporreante en el mejor sentido de la palabra.', NULL),
@@ -40,7 +41,9 @@ INSERT INTO Artists (`id`, `name`, `description`, `image_path`) VALUES
 (17, 'Richarson', 'DJ de techno y hard techno, lleva al límite la pista con sus pulsos agresivos y energía imparable.', NULL),
 (18, 'Woodhands', 'DJ y uno de los pilares del movimiento Pub Pelukas. Digital o vinilo, breakbeat o grime, siempre tropical.', NULL),
 (19, 'Felix Strizzi', 'DJ y parte del duo Bangerlore. Representante de sonidos dulzones y muy bailables a través del trance, groovy, y altos BPMs.', NULL),
-(20, 'Wyvan Cat', 'Desde el house al techno, Wyvan Cat genera un ambientazo en la pista con sus sets intencionales y bailables.', NULL);
+(20, 'Wyvan Cat', 'Desde el house al techno, Wyvan Cat genera un ambientazo en la pista con sus sets intencionales y bailables.', NULL),
+(21, 'INRRA', 'Conocido por el evento Platatonik, es un representante de hard techno de la isla. Actualmente activo también en Madrid, trae sets de muy alta energía y BPM.', '../assets/artistas/Inrra.JPEG'),
+(22, 'Strawberry Punch', 'DJ y organizadora de eventos con un abanico amplio de ambientes, desde house a techno y ritmos orientales o latinos. Conocida por su serie de eventos Eternal Spring Tribe.', '../assets/artistas/Strawberry_punch.jpg');
 
 
 
@@ -97,7 +100,7 @@ UNLOCK TABLES;
 CREATE TABLE `Users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `role` enum('User','Admin') DEFAULT 'User',
+  `role` enum('User','Admin','Artist') DEFAULT 'User',
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
@@ -109,7 +112,8 @@ CREATE TABLE `Users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `Users` WRITE;
-INSERT INTO `Users` VALUES (1,'John Doe','User','john.doe@example.com','$2b$10$7WgMoXU91Oz.9R8DZP0VDeN9E5.XwA/KfShuD6Ud8N/CC5g2VDOMK'),(2,'The Real Slim Shady','User','slim.shady@example.com','$2b$10$YdbBWUogyt4Xdp6HiY.iEOB1EztwGto65lecuBgTX8DyZ8J/jgHJu'),(3,'Cereal Killer','User','cereal.killer@example.com','$2b$10$XNcdSuY4s5J7OFhGA7r1sep1q48CfLUmtEUyvcvE5FJW7CFPosRFu'),(4,'Darth Vader','User','darth.vader@example.com','$2b$10$v1AH3ueu4CUAsMz8oiSAhOtC8hcCOBBFbkmox4zkZ02ea0knkrzO2'),(5,'Harry Potter','User','harry.potter@example.com','$2b$10$pe.UltggRlxyhsEnll9.I.rbix1t2lzjJ7wx3XRvu5MQ5NUTfnCC6'),(6,'Unicorn McSparkles','User','unicorn.mcsparkles@example.com','$2b$10$mteaV.r0MpSOk6lXTWa8Ben9pVu3Q.OD07Rv77H/BiXFrvylm5JP2'),(8,'Not A Robot','User','not.a.robot@example.com','$2b$10$3lZ2aiMHSHGwFSZ1jyLyUO0dzXGOP.ZikGAXpjdHUvshg8piz6b2q'),(9,'The Chosen One','Admin','chosen.one@example.com','$2b$10$f2fEtDQhO5fbBb5SUiYvku2KS4GV3l0tqHN79dYvqRy3GnBF31cyy'),(10,'Spaghetti Monster','User','spaghetti.monster@example.com','$2b$10$FfdlxuzIiN9yBFgXcp.9P.sKF1Mbg6ohzEsFF26TNd/jWldLHFDK6'),(11,'Ninja Pizza','User','ninja.pizza@example.com','$2b$10$C7GIvpY7eJLhXJlHYdfaketv4L3U0B2GIICZR2dcMtR.7M//p3q0u'),(12,'Lord of the Fries','User','lord.of.thefries@example.com','$2b$10$ItS039c175w9egTcyVYaTe8arWd4jLhsPA1Oa7b.fM6EfMfHH9fqq'),(13,'Captain Obvious','User','captain.obvious@example.com','$2b$10$fR.cCXCFLphH03crMchMV.C3BpI9q28KeNPDdTIIT./MifzOI7m2O'),(14,'antonio','Admin','pepe@gmail.com','$2b$10$8fAQmCJW953JOyTrzUiwaOO1lyekMPyri54XpwG9qcpLmkP1EP0B.'),(23,'Peppa Pig','Admin','peppapig@example.com','$2b$10$KEEw16v6cDx4bI43QKDrP.16bravvqLtko0/ks6LZhfhLqHE0LKX.'),(24,'Peppa Cat','User','peppacat@gmail.com','$2b$10$UKH/8LheYgdOThJMngxhyeOpPhvGRTFDv/6fQhCCMFUTMOxaV.xd6'),(25,'','User','','$2b$10$N5xpjtTUteiA48qvDUp6O.ZRujaQGVVejbigj8HYIzpyuBiepzHMm');
+INSERT INTO `Users` (`id`,`name`,`email`,`password`,`role`) VALUES (1,'astro babe','astro@example.com','$2b$10$FY3qqRpljXxBC8qQFmk07.P3CE0MU1jxVIvgy6KN8KcHMIr6C9Dl.','Artist');
+
 UNLOCK TABLES;
 
 CREATE TABLE `UserStyle` (
