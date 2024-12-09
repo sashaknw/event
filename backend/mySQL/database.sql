@@ -76,15 +76,28 @@ CREATE TABLE `Events` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `date_time` datetime NOT NULL,
-  `VenueId` int DEFAULT NULL,
   `image_path` varchar(255) DEFAULT NULL,
+  `VenueId` int DEFAULT NULL,
+  
   PRIMARY KEY (`id`),
   KEY `VenueId` (`VenueId`),
   CONSTRAINT `Events_ibfk_1` FOREIGN KEY (`VenueId`) REFERENCES `Venues` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `Events` WRITE;
-INSERT INTO `Events` VALUES (1,'Exsqueezit','2025-04-13 22:30:00',2,'../assets/Carteles/ex-squeezit.jpg'),(2,'Pub Pelukas','2025-05-04 23:00:00',1,'../assets/Carteles/Pub_pelukas.jpg'),(3,'Land of Sense','2025-05-24 21:00:00',4,'../assets/Carteles/Land_of_sense.jpg'),(4,'RAVEOUT','2024-10-24 23:30:00',4,NULL),(5,'Free2Feel','2024-12-06 23:00:00',4,NULL),(6,'HardWired','2025-03-01 22:00:00',1,NULL),(7,'VERTIGO','2025-02-14 22:30:00',7,NULL),(8,'Discontrol','2024-11-01 22:00:00',5,NULL),(9,'Asymetric','2024-11-29 22:00:00',2,NULL),(10,'Cenizas','2024-12-12 22:00:00',1,NULL),(11,'Blasfemia','2025-02-16 23:00:00',1,NULL),(12,'Sinapsis','2024-10-24 23:00:00',2,NULL);
+INSERT INTO `Events` VALUES 
+(1, 'Exsqueezit', '2025-04-13 22:30:00', '../assets/Carteles/ex-squeezit.jpg', 2),
+(2, 'Pub Pelukas', '2025-05-04 23:00:00', '../assets/Carteles/Pub_pelukas.jpg', 1),
+(3, 'Land of Sense', '2025-05-24 21:00:00', '../assets/Carteles/Land_of_sense.jpg', 4),
+(4, 'RAVEOUT', '2024-10-24 23:30:00', NULL, 4),
+(5, 'Free2Feel', '2024-12-06 23:00:00', NULL, 4),
+(6, 'HardWired', '2025-03-01 22:00:00', NULL, 1),
+(7, 'VERTIGO', '2025-02-14 22:30:00', NULL, 7),
+(8, 'Discontrol', '2024-11-01 22:00:00', NULL, 5),
+(9, 'Asymetric', '2024-11-29 22:00:00', NULL, 2),
+(10, 'Cenizas', '2024-12-12 22:00:00', NULL, 1),
+(11, 'Blasfemia', '2025-02-16 23:00:00', NULL, 1),
+(12, 'Sinapsis', '2024-10-24 23:00:00', NULL, 2);
 UNLOCK TABLES;
 
 CREATE TABLE `Styles` (
