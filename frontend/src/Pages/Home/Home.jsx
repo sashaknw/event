@@ -34,6 +34,11 @@ const Home = () => {
     }
   };
 
+   const handleClear = () => {
+     setSearchTerm("");
+     setEvents([]);
+     setSearchCompleted(false);
+   };
   const openRegisterPopup = () => {
     setIsRegisterPopupOpen(true); // Open the Register popup
   };
@@ -41,6 +46,7 @@ const Home = () => {
   const closeRegisterPopup = () => {
     setIsRegisterPopupOpen(false); // Close the Register popup
   };
+
 
   return (
     <div className="home">
@@ -69,7 +75,7 @@ const Home = () => {
               alt="Palette"
               className="palette-image"
             />
-            <h2 class="h2desc">EVENTOS DE MÚSICA ELECTRÓNICA EN LAS PALMAS</h2>
+            <h2 className="h2desc">EVENTOS DE MÚSICA ELECTRÓNICA EN LAS PALMAS</h2>
             <p className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               vitae ante vel enim placerat laoreet. Aliquam erat volutpat.
@@ -95,6 +101,9 @@ const Home = () => {
                   />
                   <button className="btn-buscar" onClick={handleSearch}>
                     Buscar
+                  </button>
+                  <button className="clear-btn" onClick={handleClear}>
+                    Limpiar
                   </button>
 
                   {loading && <p className="loading-text">Cargando...</p>}

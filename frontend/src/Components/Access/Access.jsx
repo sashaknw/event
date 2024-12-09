@@ -15,8 +15,14 @@ const Access = ({ onAccessSuccess, openRegisterPopup }) => {
   const handleLogin = async () => {
     try {
       const response = await login(loginData);
-      console.log("Acceso correcto", response);
+      const { token, role } = response.data;
+
+localStorage.setItem("authToken", token);
+localStorage.setItem("authRole", role);
+
+    
       onAccessSuccess(response.data);
+      console.log("Estas logead@", response.data);
     } catch (error) {
       console.error("Acceso incorrecto", error);
       setError("¡Ups! Credenciales incorrectas");

@@ -47,12 +47,13 @@ async function getOneArtist(req, res) {
 }
 
 
+// Artist Controller (backend)
 async function updateArtist(req, res) {
   try {
     const [artistExist, artist] = await Artist.update(req.body, {
       returning: true,
       where: {
-        id: req.params.id,
+        name: req.params.name,  
       },
     });
     if (artistExist !== 0) {
@@ -64,6 +65,8 @@ async function updateArtist(req, res) {
     return res.status(500).send(error.message);
   }
 }
+
+
 
 async function deleteArtist(req, res) {
   try {
@@ -85,6 +88,7 @@ async function deleteArtist(req, res) {
 async function getArtistByName(req, res) {
   try {
     const artistName = req.query.name;
+     console.log(`Searching for artist: ${artistName}`);
     const artist = await Artist.findAll({
       where: {
         name: {

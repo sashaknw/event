@@ -13,11 +13,15 @@ async function addUser(req, res) {
       hashedPassword = await bcrypt.hash(req.body.password, saltRounds); // Use async hash
     }
 
-    // Create the user with hashed password if applicable
+    // Default role to 'Member' if not provided (you can change this logic if necessary)
+    const role = req.body.role || "Member"; // Ensure role is set, default to 'Member'
+
+    // Create the user with hashed password and role
     const user = await User.create({
       name: req.body.name,
-      email:req.body.email,
-      password: hashedPassword, // Use hashed password in user creation
+      email: req.body.email,
+      password: hashedPassword, // Use hashed password
+      role, // Add role (Artist or Admin or Member)
     });
 
     console.log("User added:", user);

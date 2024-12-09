@@ -1,18 +1,27 @@
 import api from "./api";
-import axios from "axios";
 
 export const getArtistByName = async (name) => {
   try {
-    const response = await axios.get('/api/artist/search', {
-      params: { name }, 
+    const response = await api.get("/artist/search", {
+      params: { name },
     });
-
     console.log("Response from backend:", response.data);
-
-    
-   return Array.isArray(response.data) ? response.data : [];
+    return Array.isArray(response.data) ? response.data : [];
   } catch (error) {
     console.error("Error fetching artist:", error);
-    throw error; 
+    throw error;
   }
+};
+
+export const getArtistById = async (artistId) => {
+  return api.get(`/artist/${artistId}`);
+};
+
+
+
+export const updateArtist = async (name, artistData) => {
+  const response = await api.put(
+    `/artist/name/${encodeURIComponent(name)}`,artistData
+  );
+  return response.data;
 };

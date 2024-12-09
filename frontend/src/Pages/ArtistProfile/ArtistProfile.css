@@ -1,0 +1,53 @@
+/* ArtistProfile.css */
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.popup-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background to read text */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.popup-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.popup-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.popup-content .close-btn {
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.popup-content .close-btn:hover {
+    background-color: #f50057;
+}

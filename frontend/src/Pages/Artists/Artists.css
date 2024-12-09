@@ -1,97 +1,28 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 3px;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Outfit', sans-serif;
-    background-color: black;
-    color: white;
-}
-
-/* Page Layout */
-.artistas-page {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Hero Section */
 .hero-section {
+    display: block;
     text-align: center;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
-.title {
-    font-size: 48px;
+.title-artistas {
+    font-size: 64px;
     font-weight: 600;
 }
 
 .conocelos {
-    font-size: 24px;
+    font-size: 48px;
+    font-style: italic;
+    color: #F788B8;
     font-family: "Syne Tactile", system-ui;
-    color: #F788B8;
 }
 
-/* Search Section */
-.search-section {
-    display: flex;
-    justify-content: flex-end;
-    /* Align the search bar to the right */
-    margin-bottom: 20px;
-    /* Space above the search bar */
-}
-
-.search-input-container {
-    display: flex;
-    gap: 10px;
-}
-
-.search-input-container input {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 50px;
-    border: 2px solid #ccc;
-    width: 200px;
-    /* Set the width of the search input */
-}
-
-.search-btn {
-    padding: 10px 20px;
-    background-color: #F788B8;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.search-btn:hover {
-    background-color: #ff99cc;
-    transform: scale(1.1);
-}
-
-.loading-text {
-    font-size: 16px;
-    color: #F788B8;
-    margin-top: 10px;
-}
-
-.no-results {
-    font-size: 16px;
-    color: #F788B8;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* DJs Section */
 .djs-section {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    position: relative;
 }
 
 .djs-cards-container {
@@ -99,37 +30,81 @@ body {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    transition: transform 0.3s ease-in-out;
 }
 
 .dj-card {
-    background-color: #1a1a1a;
-    border-radius: 16px;
-    padding: 20px;
+    position: relative;
     width: 250px;
-    text-align: center;
+    text-align: left;
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 26px;
+    background-color: transparent;
+    margin-bottom: 30px;
+    /* Add margin to create space for button */
+}
+
+.dj-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.dj-info {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    display: none;
+    text-align: left;
+    z-index: 2;
+    color: white;
+}
+
+.dj-card:hover::after {
+    opacity: 1;
+}
+
+.dj-card:hover .dj-info {
+    display: block;
+}
+
+.dj-card:hover {
+    transform: scale(1.1);
+    z-index: 10;
 }
 
 .dj-card img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
+    border-radius: 26px;
     margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.dj-info {
-    margin-top: 10px;
+.dj-card:hover img {
+    transform: scale(1.2);
 }
 
 .social-icons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .social-icons img {
@@ -142,54 +117,73 @@ body {
     cursor: pointer;
 }
 
-/* Artist Display Section */
-.artists-display {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.artist-card {
-    background-color: #1a1a1a;
-    border-radius: 16px;
-    padding: 20px;
-    width: 250px;
+/* Title for Results */
+.search-results-title {
     text-align: center;
-    color: white;
-}
-
-.artist-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.artist-card h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.artist-card p {
-    font-size: 16px;
-    color: #F788B8;
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
+.search-btn,
+.clear-btn {
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: solid 3px white;
+    border-radius: 26px;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-.footer .left p,
-.footer .right p {
-    font-size: 16px;
-    line-height: 1.5;
+.clear-btn:hover,
+.search-btn:hover {
+    background-color: #F788B8 !important;
+    color: black;
+    border: solid 3px black !important;
 }
 
-.footer .highlight {
-    color: #F788B8;
+.search-input-container {
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 18rem;
+    margin-right: 5rem;
+}
+
+/* Edit button styles */
+.edit-btn {
+    position: absolute;
+    top: 0px;
+    left: 70%;
+    background-color: #F788B8;
+    color: white;
+    padding: 8px 15px;
+    /* Smaller padding for smaller button */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    /* Fade effect when hovering */
+}
+
+/* Hover effects for the Edit button */
+.edit-btn:hover {
+    background-color: #F788B8;
+    opacity: 0.8;
+    cursor: pointer;
+    transform: scale(1.1);
+   
+}
+
+.dj-card:hover .edit-btn {
+    opacity: 1;
+   
 }

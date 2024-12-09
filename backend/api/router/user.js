@@ -16,7 +16,7 @@ const { checkAuth, checkAdmin } = require("../middleware/auth");
 router.get("/", checkAuth, checkAdmin, getAllUsers);
 router.get("/:id", getOneUser);
 router.get("/profile", checkAuth, getProfile);
-router.post("/", checkAuth, checkAdmin, addUser);
+router.post("/", addUser);
 router.post("/profile/styles", checkAuth, addFavoriteStyle);
 router.put("/:id", checkAuth, checkAdmin, updateUser);
 router.put("/profile/:id", checkAuth, updateProfile);

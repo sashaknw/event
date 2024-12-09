@@ -28,8 +28,8 @@ const login = async (req, res) => {
     const comparePass = bcrypt.compareSync(req.body.password, user.password);
 
     if (comparePass) {
-      const payload = { email: user.email };
-      const token = jwt.sign(payload, "isasecret", { expiresIn: "1h" });
+      const payload = { email: user.email, role: user.role };
+      const token = jwt.sign(payload, "isasecret", { expiresIn: "24h" });
       return res.status(200).json({ token, role: user.role });
     } else {
       return res.status(404).send("Error: Alguno de los datos no es correcto");

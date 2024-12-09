@@ -129,6 +129,24 @@ body {
   align-items: center;
 }
 
+.btn-buscar,
+.clear-btn {
+  margin-top: 5px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: solid 3px white;
+  border-radius: 26px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.clear-btn:hover,
+.search-btn:hover {
+  background-color: #bbb;
+}
+
 .buscar-eveto-y-artista-parent {
   flex-grow: 2;
   /* Make the input field take available space */
