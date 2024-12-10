@@ -20,10 +20,10 @@ const Community = () => {
   return (
     <div className="Community">
       <Header />
-      <main className="main">
+      <main className="main-community">
         <div className="text-row">
-          <h1 className="title">Comunidad</h1>
-          <h1 className="subtitle">entérate</h1>
+          <h1 className="title-community">Comunidad</h1>
+          <h1 className="subtitle-community">entérate</h1>
         </div>
 
         <div className="search-bar">
@@ -47,15 +47,19 @@ const Community = () => {
             <p>Otros</p>
           </div>
         </div>
-        <div className="cta">
-          <h2>
+        <div className="cta-community">
+          <h2 className="crea-perfil-community">
             Crea tu perfil de artista
             <br />
             promociona tu evento
           </h2>
-          <button className="register-button" onClick={openRegisterPopup}>
+          <button
+            className="register-button-community"
+            onClick={openRegisterPopup}
+          >
             REGÍSTRATE
           </button>
+          <div className="animation-snail"></div>
         </div>
       </main>
 

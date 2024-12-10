@@ -38,26 +38,40 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
-.title {
+.title-community {
   text-align: left;
   font-size: 48px;
   margin-top: 50px;
+  margin-left: 4.5rem;
+  padding: 20px;
 }
 
-.subtitle {
+.main-community {
+  display: flex;
+  flex-direction: column;
+  
+  position: relative;
+ 
+  
+}
+
+.subtitle-community {
   font-family: "Syne Tactile", system-ui;
   color: #f5a3ca;
-  text-align: right;
+  
   font-size: 4rem;
+  
+  margin-right: 50rem;
+  margin-top: 6rem;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  
 }
 
 .search-bar input {
@@ -71,7 +85,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   margin-top: 40px;
 }
 
@@ -87,6 +101,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .icon.star {
@@ -109,12 +128,13 @@ body {
   background-size: cover;
 }
 
-.cta {
+.cta-community {
   text-align: center;
-  margin: 100px 0px;
+  margin-top: 0px ;
+  
 }
 
-.register-button {
+.register-button-community{
   background-color: #f788b8;
   color: white;
   border: none;
@@ -122,4 +142,95 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
+
+.register-button-community:hover {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.animation-snail {
+
+    box-shadow:
+      1.5em 0em 0 white,
+      /* Halved offsets for a smaller size */
+      1em -0.5em 0 white,
+      1.5em -1em 0 white,
+      2em -1em 0 white,
+      2.5em -0.5em 0 white,
+      3em 0em 0 white,
+      2.5em 0.5em 0 white,
+      1.5em 1em 0 white,
+      1em 1em 0 white,
+      0.5em 0.5em 0 white,
+      -0.5em -0.5em 0 white,
+      0em -1em 0 white,
+      0.5em -1.5em 0 white,
+      1em -2em 0 white,
+      1.5em -2em 0 white,
+      2em -2em 0 white,
+      2.5em -2em 0 white,
+      3em -1.5em 0 white,
+      2em -2em 0 white,
+      3.5em -1em 0 white,
+      4em -0.5em 0 white,
+      4.5em -0.5em 0 #f788b8,
+      /* Pink shell */
+      5em -1em 0 #f788b8,
+      5.5em -1.5em 0 #f788b8,
+      6em -2em 0 #f788b8,
+      2.5em 1em 0 #f788b8,
+      3em 1em 0 #f788b8,
+      3.5em 1em 0 #f788b8,
+      4em 1em 0 #f788b8,
+      4.5em 1em 0 #f788b8,
+      5em 1em 0 #f788b8,
+      5.5em 1em 0 #f788b8,
+      6em 0.5em 0 #f788b8,
+      6.5em 0em 0 #f788b8,
+      7em -0.5em 0 #f788b8,
+      7.5em -1em 0 #f788b8,
+      8em -1.5em 0 #f788b8,
+      8em -2em 0 #f788b8,
+      8em -2.5em 0 #f788b8,
+      7em -2.5em 0 #f788b8,
+      6.5em -2.5em 0 #f788b8,
+      7.5em -2.5em 0 #f788b8,
+      7em -3em 0 #f788b8,
+      6.5em -3.5em 0 #f788b8,
+      6em -4em 0 #f788b8,
+      5.5em -4.5em 0 #f788b8,
+      5em -5em 0 #f788b8,
+      7.5em -3em 0 #f788b8,
+      8em -3.5em 0 #f788b8,
+      8.5em -4em 0 #f788b8,
+      9em -4.5em 0 #f788b8,
+      2em 1em 0 white;
+    /* Body ends here */
+    background: white;
+    /* Center of snail remains white */
+    width: 5px;
+    /* Smaller width */
+    height: 5px;
+    /* Smaller height */
+    overflow: hidden;
+    margin: 0px;
+    margin-top: 40px;
+    animation: moveRight 20s linear infinite;
+  }
+
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+
